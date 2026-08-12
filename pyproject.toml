@@ -1,0 +1,20 @@
+[project]
+name = "final-project-stackfuel"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "ipykernel>=7.3.0",
+    "matplotlib>=3.11.1",
+    "pandas>=3.0.5",
+    "seaborn>=0.13.2",
+    "seeborn>=0.4.3",
+]
+
+[project.scripts]
+final-project-stackfuel = "final_project_stackfuel:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
