@@ -5,9 +5,27 @@ Este arquivo registra o progresso do projeto e deve ser atualizado sempre que um
 ## Última atualização
 
 - Data: 2026-08-12
-- Status geral: raiz oficial consolidada em `C:\Users\eppin\Desktop\Final_Project_Stackfuel` na branch `integration/project-consolidation`; UV é o único ambiente ativo; memória operacional, proteção RAW, manifesto e checksums locais foram implantados. F2.2 permanece `IN PROGRESS` com aquisição WIdO parcial; nenhuma análise substantiva foi iniciada.
+- Deadline final: 2026-08-26.
+- Entrega de apresentação: dashboard interativo em Microsoft Power BI, alimentado por tabelas processadas e validadas em Python/Pandas.
+- Status geral: raiz oficial consolidada em `C:\Users\eppin\Desktop\Final_Project_Stackfuel`; UV é o único ambiente ativo. F2.2 permanece `IN PROGRESS` com aquisição WIdO parcial. A execução integrada F2.2–F2.8 está autorizada sem aprovação intermediária; a Fase 3 permanece `TODO` e não pode ser iniciada durante esse bloco.
 
 ## Tarefas concluídas
+
+### 31. Atualização da memória operacional com o handoff histórico validado
+
+#### O que foi feito
+
+- Registro do deadline final em 2026-08-26 e do dashboard interativo Power BI como apresentação final.
+- Formalização de Python/Pandas como camada de processamento e validação dos dados consumidos pelo Power BI, com reconciliação obrigatória entre as duas ferramentas.
+- Autorização do bloco operacional integrado F2.2–F2.8 sem aprovação intermediária e proibição explícita de iniciar a Fase 3 durante sua execução.
+- Formalização do escopo WIdO 2012–2024 para princípios ativos ATC A10BJ efetivamente disponíveis e do caminho canônico por ano/código.
+- Preservação dos dois RAW WIdO existentes, da classificação `do_not_publish` e da proibição de publicar RAW.
+- Atualização exclusivamente documental; nenhuma aquisição, análise, alteração RAW, dependência ou artefato Power BI foi criado.
+
+#### Próxima tarefa operacional
+
+- Executar o bloco integrado F2.2–F2.8 conforme D-022, começando pela aquisição sistemática WIdO já autorizada; documentar combinações indisponíveis e não iniciar Fase 3.
+- As referências históricas a decisões ainda pendentes sobre anos, escopo ATC e armazenamento WIdO ficam superadas pela D-022; permanecem preservadas apenas como histórico.
 
 ### 30. F0.11 — consolidação definitiva e sistema de continuidade
 

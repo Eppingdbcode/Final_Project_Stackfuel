@@ -377,6 +377,8 @@ A decisão aprovada não inicia a Fase 2 e não autoriza download, ingestão, tr
 
 ## D-018 — Aquisição parcial dos dados WIdO
 
+> **Superação:** os bloqueios decisionais sobre anos, escopo ATC e armazenamento registrados nesta decisão foram resolvidos pela D-022. A D-018 permanece preservada como histórico.
+
 - **Data da execução técnica:** 2026-08-11
 - **Tarefa:** F2.2
 - **Status:** `IN PROGRESS — aquisição parcial; seleção sistemática de anos/substâncias aguarda decisão do usuário`.
@@ -417,3 +419,29 @@ A decisão aprovada não inicia a Fase 2 e não autoriza download, ingestão, tr
 - **Publicação:** licença e redistribuição WIdO permanecem não confirmadas; ambos os CSVs estão classificados `do_not_publish` e não podem entrar no Git.
 - **Limite:** manifesto/checksums cobrem somente os RAW existentes nesta data. F2.7 e F2.8 continuam abertas até cobrir e validar todas as aquisições previstas.
 - **Aprovação:** consolidação local e registros públicos de integridade explicitamente autorizados pelo usuário.
+
+## D-021 — Deadline e apresentação final em Power BI
+
+- **Data:** 2026-08-12
+- **Tarefa:** governança da entrega final.
+- **Decisão:** fixar o deadline final em 2026-08-26 e usar um dashboard interativo em Microsoft Power BI como apresentação final.
+- **Processamento:** Python/Pandas permanece responsável pela preparação e validação dos dados analíticos; Power BI deve consumir somente tabelas processadas e validadas.
+- **Reconciliação:** métricas, filtros, unidades, denominadores e resultados devem ser reconciliados entre controles Python e Power BI.
+- **Transparência:** dados observados e premissas/modelagem devem ser visualmente distinguíveis.
+- **Proposta mínima:** visão executiva, tendências observadas, análise de cenários e métodos/limitações, sujeita à disponibilidade dos dados e ao prazo; não se fixa número obrigatório de páginas.
+- **Condição:** o planejamento deve preservar tempo suficiente para construção e validação do dashboard.
+- **Aprovação:** decisão explicitamente fornecida pelo usuário em 2026-08-12.
+
+## D-022 — Execução integrada F2.2–F2.8 e escopo sistemático WIdO
+
+- **Data:** 2026-08-12
+- **Tarefa:** F2.2–F2.8.
+- **Decisão:** autorizar a execução operacional integrada de F2.2–F2.8 sem aprovação intermediária; a Fase 3 não pode ser iniciada durante esse bloco.
+- **WIdO — período:** 2012–2024.
+- **WIdO — escopo:** princípios ativos da classe ATC A10BJ efetivamente disponíveis no PharMaAnalyst; adquirir somente combinações de ano/substância disponibilizadas pelo portal e documentar as indisponíveis.
+- **Caminho canônico:** `01_raw_data/wido/pharmaanalyst/year=AAAA/atc=CODIGO_ATC/wirkst_export.csv`.
+- **Preservação:** manter os dois arquivos WIdO existentes sem alteração, remoção ou deduplicação.
+- **Tirzepatida:** incluir somente como comparador separado se sua inclusão/disponibilidade estiver confirmada; não promover silenciosamente a A10BJ.
+- **Publicação:** licença e redistribuição WIdO permanecem não confirmadas; status `do_not_publish`; nenhum RAW pode ser publicado.
+- **Próxima ação:** iniciar a execução operacional F2.2, não uma nova rodada decisória, e prosseguir sequencialmente até F2.8 dentro da autorização.
+- **Aprovação:** decisão e execução integrada explicitamente autorizadas pelo usuário em 2026-08-12.

@@ -49,7 +49,7 @@ As análises F1.2 a F1.8 são independentes entre si. Cada uma pode ser concluí
 | ID | Status | Tarefa | Prioridade | Esforço | Dependências | Entregável | Aprovação |
 |---|---|---|---|---|---|---|---|
 | F2.1 | DONE | Aprovar a lista final de datasets | HIGH | XS | F1.10, F0.7 | Lista aprovada em `00_project/data_feasibility_map.md` | SIM — concluída |
-| F2.2 | IN PROGRESS — aquisição parcial; seleção sistemática de anos/substâncias aguarda decisão do usuário | Adquirir e preservar dados WIdO | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/wido/` | NÃO |
+| F2.2 | IN PROGRESS — aquisição parcial; execução operacional autorizada | Adquirir e preservar dados WIdO para 2012–2024 e ATC A10BJ efetivamente disponíveis | HIGH | S | F2.1 | Arquivos originais no caminho canônico em `01_raw_data/wido/pharmaanalyst/` e indisponibilidades documentadas | NÃO — integrada a F2.2–F2.8 |
 | F2.3 | TODO | Adquirir e preservar dados RKI Diabetes | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_diabetes/` | NÃO |
 | F2.4 | TODO | Adquirir e preservar dados RKI Obesity | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_obesity/` | NÃO |
 | F2.5 | TODO | Adquirir e preservar dados Destatis | HIGH | M | F2.1 | Arquivos originais em `01_raw_data/destatis/` | NÃO |
@@ -159,13 +159,13 @@ As análises F1.2 a F1.8 são independentes entre si. Cada uma pode ser concluí
 | F10.7 | TODO | Finalizar documentação de execução | HIGH | M | F10.6 | `README.md` atualizado | NÃO |
 | F10.8 | TODO | Atualizar o status e realizar revisão final dos arquivos | HIGH | M | F10.7 | `PROJECT_STATUS.md` atualizado e checklist final | SIM — encerramento do projeto |
 
-## Próxima tarefa proposta para aprovação
+## Próxima execução operacional autorizada
 
-Somente F2.2 deve ser tratada como próxima tarefa ativa. As demais entradas abaixo permanecem preservadas como backlog elegível posterior e não devem ser iniciadas antes da conclusão ou nova decisão explícita sobre F2.2.
+Executar integralmente F2.2–F2.8, sem aprovação intermediária, mantendo F2.2 `IN PROGRESS` até concluir a aquisição WIdO. A execução deve respeitar o deadline de 2026-08-26 e preservar tempo para o dashboard Power BI. Não iniciar Fase 3 durante este bloco.
 
 | ID | Status | Tarefa | Prioridade | Esforço | Dependências | Entregável | Aprovação |
 |---|---|---|---|---|---|---|---|
-| F2.2 | IN PROGRESS — decisão necessária | Definir escopo sistemático de anos/substâncias e concluir aquisição WIdO sem alterar RAW existente | HIGH | S | F2.1 | Conjunto WIdO autorizado, preservado e registrado | SIM — antes de novas aquisições |
+| F2.2–F2.8 | AUTHORIZED — execução integrada | Adquirir somente combinações WIdO disponíveis; executar aquisições autorizadas restantes; registrar metadados, indisponibilidades e checksums; encerrar Fase 2 | HIGH | L | F2.1 | RAW preservado localmente, manifesto/checksums completos e validação de encerramento | NÃO — sem aprovação intermediária; Fase 3 proibida |
 | F2.3 | TODO | Adquirir e preservar dados RKI Diabetes | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_diabetes/` | NÃO |
 | F2.4 | TODO | Adquirir e preservar dados RKI Obesity | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_obesity/` | NÃO |
 | F2.5 | TODO | Adquirir e preservar dados Destatis | HIGH | M | F2.1 | Arquivos originais em `01_raw_data/destatis/` | NÃO |

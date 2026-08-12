@@ -2,18 +2,28 @@
 
 ## Current operational handoff — 2026-08-12
 
-- **Official root:** `C:\Users\eppin\Desktop\Final_Project_Stackfuel`.
-- **GitHub:** `https://github.com/Eppingdbcode/Final_Project_Stackfuel.git`.
-- **Consolidation branch:** `integration/project-consolidation`; `main` was not modified or merged.
-- **Temporary backup:** `C:\Users\eppin\GLP1_Germany_Final_Project` remains intact and must not be edited or removed until a later explicit decision.
-- **Environment:** UV is the sole active manager; `.python-version`, `pyproject.toml`, `uv.lock` and the UV-managed `.venv` are the sources of truth. The former `environment.yml` remains only in the backup and was not incorporated.
-- **Local RAW:** copied byte for byte to the official root only after ignore protection. RAW is not published. `01_raw_data/raw_data_manifest.csv` and `01_raw_data/raw_data_checksums.sha256` are the only public integrity records besides the README.
-- **WIdO duplication:** both 556-byte files remain preserved and share SHA-256 `05D1667BFE2197C649F3FC7C37A2A2835FEDEE063A88C3C328DF8CEE4E66CCA5`; the origin of the second path remains `not confirmed` and neither file may be published.
-- **Operational memory:** `AGENTS.md`, `PROJECT_STATUS.md`, `00_project/TASKS.md`, `00_project/decision_log.md` and this handoff. Operational detail is in `00_project/WORKFLOW.md`.
-- **Last completed task:** F0.11, definitive consolidation and continuity-system deployment.
-- **Current substantive state:** F2.2 remains `IN PROGRESS` with partial WIdO acquisition. F2.3–F2.6 and F6.2 have not started.
-- **Blocking decisions:** define the systematic WIdO year/substance scope and the approved canonical storage strategy without altering existing RAW; WIdO redistribution remains unconfirmed.
-- **Single next eligible task:** resolve and complete the acquisition scope for F2.2; do not start another acquisition automatically.
+- **Official root:** `C:\Users\eppin\Desktop\Final_Project_Stackfuel`; GitHub: `https://github.com/Eppingdbcode/Final_Project_Stackfuel.git`; operational branch: `main`.
+- **Temporary backup:** `C:\Users\eppin\GLP1_Germany_Final_Project` remains intact and must not be edited or removed without an explicit later decision.
+- **Deadline:** 2026-08-26.
+- **Final presentation:** interactive Microsoft Power BI dashboard. Python/Pandas prepares and validates analytical tables; Power BI must reconcile metrics, filters, units, denominators and results with Python controls and visibly distinguish observed data from assumptions.
+- **Environment:** UV is the sole manager; `.python-version`, `pyproject.toml`, `uv.lock` and the UV-managed `.venv` are the sources of truth. `environment.yml` exists only in the backup.
+- **Operational memory:** `AGENTS.md`, `PROJECT_STATUS.md`, `00_project/TASKS.md`, `00_project/decision_log.md` and this handoff; operational details are in `00_project/WORKFLOW.md`.
+- **Last completed task:** operational-memory update from the validated historical handoff.
+- **Current state:** F2.2 is `IN PROGRESS` with partial WIdO acquisition. Integrated execution F2.2–F2.8 is authorized without intermediate approval. Phase 3 remains `TODO` and must not start during that block.
+- **Next task:** operationally execute F2.2–F2.8 under D-022, beginning with the authorized systematic WIdO acquisition; this is no longer a pending scope decision.
+
+### Authorized WIdO scope
+
+- Years 2012–2024; active ingredients in ATC A10BJ only when effectively available in PharMaAnalyst.
+- Acquire only portal-available year/substance combinations and document unavailable combinations.
+- Canonical path: `01_raw_data/wido/pharmaanalyst/year=AAAA/atc=CODIGO_ATC/wirkst_export.csv`.
+- Preserve both existing WIdO files without alteration or deduplication. Tirzepatide is a separate comparator only if inclusion/availability is confirmed.
+- WIdO redistribution remains unconfirmed; status is `do_not_publish`; no RAW may be published.
+- The existing files remain 556-byte, byte-identical copies with SHA-256 `05D1667BFE2197C649F3FC7C37A2A2835FEDEE063A88C3C328DF8CEE4E66CCA5`.
+
+### Power BI minimum proposal
+
+Subject to available data and the deadline: executive view, observed trends, scenario analysis, and methods/limitations. No fixed number of pages is required; preserve time for dashboard construction and validation.
 
 ### Start a new chat
 
@@ -27,7 +37,7 @@ uv run python -c "import pandas, matplotlib, seaborn, openpyxl"
 uv run pytest
 ```
 
-`no tests collected` means no tests exist; it is not evidence that analytical code works. Core limitations remain: distinct population universes cannot be conflated; WIdO has no indication or total-market coverage; GEDA is self-reported; Destatis disease costs are not direct GKV/avoidable costs; trial efficacy is not German real-world effectiveness; projections and assumptions require explicit labels and sensitivity analysis.
+`no tests collected` means no tests exist; it is not evidence that analytical code works. Core limitations remain: distinct population universes cannot be conflated; WIdO has no indication or total-market coverage; GEDA is self-reported; Destatis disease costs are not direct GKV/avoidable costs; trial efficacy is not German real-world effectiveness; projections and assumptions require explicit labels and sensitivity analysis. See the specialized feasibility and evidence documents instead of duplicating their matrices here.
 
 Validation on 2026-08-12 completed `uv sync`; imports succeeded for pandas 3.0.5, matplotlib 3.11.1, seaborn 0.13.2 and openpyxl 3.1.5. Pytest 9.1.1 collected no tests (`exit 5`), so analytical validation remains pending until code/tests exist.
 

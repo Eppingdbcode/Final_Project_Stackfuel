@@ -22,6 +22,8 @@ Antes de iniciar qualquer tarefa, leia nesta ordem: `PROJECT_STATUS.md`, `00_pro
 - Registre decisões metodológicas e suas justificativas em `00_project/decision_log.md`. Ao concluir uma tarefa, atualize `PROJECT_STATUS.md` e `00_project/TASKS.md` sem apagar o histórico.
 - Antes de declarar conclusão, execute e registre validações proporcionais ao risco: testes relevantes, execução reproduzível, verificações de esquema/linhagem/unidades e inspeção dos entregáveis. Preserve alterações preexistentes do usuário e revise o diff.
 - Não declare conclusão com documentação central desatualizada. Mostre o diff e o estado Git e confirme que RAW, segredos e caches não entraram no staging.
+- Controle explicitamente o prazo final de `2026-08-26` ao priorizar tarefas e preserve tempo suficiente para preparar e validar a apresentação interativa em Microsoft Power BI.
+- Power BI deve consumir somente tabelas processadas e validadas por Python/Pandas. Reconcilie métricas, filtros, denominadores e resultados entre Python e Power BI e mantenha visível a distinção entre dados observados e premissas.
 
 ## Definition of Done
 
