@@ -5,6 +5,38 @@ build/
 dist/
 wheels/
 *.egg-info
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
 
 # Virtual environments
-.venv
+.venv/
+
+# Secrets and local configuration
+.env
+.env.*
+*.env
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files and logs
+*.tmp
+*.temp
+*.log
+
+# Restricted project materials
+01_raw_data/**
+!01_raw_data/README.md
+!01_raw_data/raw_data_manifest.csv
+!01_raw_data/raw_data_checksums.sha256
+05_sources/studies/**
+!05_sources/studies/README.md
+05_sources/documentation/**
+!05_sources/documentation/README.md
+04_outputs/**/intermediate/**
+04_outputs/**/temporary/**
