@@ -18,15 +18,15 @@
 ## Page 2 - Observed Data
 
 - WIdO matrix: ingredient, ATC, prescriptions, DDD, net cost, unit costs. Do not use a trend visual.
-- Population line or column: published total resident population by year; optional age slicer for detailed exploration.
+- Population cards/table: published total resident population by year; optional age slicer. Do not connect 2021 to 2022 as a continuous trend because the census basis changes.
 - Disease-cost clustered columns: diagnosis and year, filtered to `Mill. EUR`; label **all payers**.
 - Slicers: period, ingredient, diagnosis, metric/unit. Keep fact-specific slicers visually grouped.
 
 ## Page 3 - Scenario Framework / Data Gaps
 
-- Table from `scenario_framework.csv`: parameter, status, input class, source and limitation.
+- Table from `scenario_framework.csv`: parameter, status, input class, source, quality, permitted use, blocking flag and treatment.
 - KPI: `Scenario Result Status`.
-- No treatment, savings, ROI or break-even numbers. Explain that eligibility, GKV attribution, treatment cost, effect and persistence are unavailable/not selected.
+- No treated-population, savings, ROI or break-even numbers. Explain that STEP 1 efficacy/tolerability evidence is available but eligibility, GKV attribution, uptake, annual treatment cost, long-term persistence and avoided-cost mapping remain unavailable.
 
 ## Page 4 - Methods and Limitations
 
@@ -40,7 +40,7 @@
 - Observed administrative data: dark blue.
 - Official estimates: teal.
 - Derived controls: grey.
-- Literature parameters: amber (currently absent).
+- Literature parameters: amber (STEP 1 context only; not used in an economic calculation).
 - Modelled assumptions/scenarios: purple (framework only, no results).
 - Use the input-class label in every tooltip and never combine universes in a single unlabeled KPI.
 

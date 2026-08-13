@@ -36,6 +36,7 @@ Thumbs.db
 !01_raw_data/raw_data_checksums.sha256
 05_sources/studies/**
 !05_sources/studies/README.md
+!05_sources/studies/clinical_evidence_register.csv
 05_sources/documentation/**
 !05_sources/documentation/README.md
 04_outputs/**/intermediate/**

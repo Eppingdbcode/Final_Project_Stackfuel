@@ -102,6 +102,9 @@ def build_population() -> pd.DataFrame:
     out["input_class"] = "official population estimate"
     out["geography"] = "Germany"
     out["denominator"] = "registered resident population at year end"
+    out["series_basis"] = out["year"].map(
+        {2021: "Census 2011 basis", 2022: "Census 2022 basis", 2023: "Census 2022 basis", 2024: "Census 2022 basis", 2025: "Census 2022 basis"}
+    )
     if set(out["year"]) != {2021, 2022, 2023, 2024, 2025}:
         raise ValueError("Unexpected population coverage")
     return out.sort_values(["year", "age_code"]).reset_index(drop=True)
@@ -266,6 +269,8 @@ def build_data_dictionary(tables: dict[str, pd.DataFrame]) -> pd.DataFrame:
         "fact_obesity_observed": ("date_key", "Germany x published survey period x total adult stratum", "weighted adult survey population", "RKI Table 2, DOI 10.25646/12990", "official survey estimate"),
         "fact_disease_cost_observed": ("date_key + diagnosis_code + metric_code", "Germany x year x selected ICD group x metric", "row-specific: national all-payer total or resident population", "Destatis 23631-0001", "official disease-cost estimate"),
         "raw_inventory": ("file", "one row per acquired RAW path", "not applicable", "Phase 2 RAW manifest", "mixed; see row input_class"),
+        "control_totals": ("table + metric", "one row per validation control", "not applicable", "project validation specification and generated outputs", "derived validation"),
+        "scenario_framework": ("parameter", "one row per required model parameter or result gate", "not applicable", "minimum F6.2 assessment", "mixed; see row input_class"),
     }
     descriptions = {
         "date_key": ("Stable period key for relationships", "not applicable", "table-specific"),
@@ -327,16 +332,23 @@ def build_controls(tables: dict[str, pd.DataFrame]) -> pd.DataFrame:
 def build_scenario_framework() -> pd.DataFrame:
     return pd.DataFrame(
         [
-            ("resident_population", "available", "official population estimate", "Destatis 12411-0005", "Not GKV population"),
-            ("obesity_prevalence", "available_with_limitations", "official survey estimate", "RKI GEDA", "Self-reported; not eligibility"),
-            ("clinical_eligibility_share", "unavailable", "modelled assumption", "not selected", "Required before target population calculation"),
-            ("gkv_attribution", "unavailable", "modelled assumption", "not selected", "Resident population and all-payer costs cannot be mapped silently"),
-            ("annual_treatment_cost", "unavailable", "literature parameter", "not selected", "F6.2/economic parameter task required"),
-            ("treatment_effect", "unavailable", "literature parameter", "not selected", "F6.2 required"),
-            ("persistence", "unavailable", "literature parameter or modelled assumption", "not selected", "No defensible German long-term input"),
-            ("net_budget_impact", "not_calculated", "derived calculation", "not applicable", "Central parameters unavailable"),
+            ("resident_population", "available_with_break", "official estimate", "Destatis 12411-0005", "high", "Contextual denominator only", False, "Use 2025 total; do not treat 2021-2025 as continuous trend"),
+            ("adult_share", "derivable", "derived calculation", "Destatis 12411-0005", "high", "May be derived from age rows", False, "Not calculated because target population remains blocked downstream"),
+            ("obesity_prevalence", "available_with_limitations", "official estimate", "RKI GEDA", "moderate", "Epidemiological context", False, "Self-reported; not eligibility"),
+            ("regulatory_indication", "available", "regulatory evidence", "EMA Wegovy EPAR", "high", "Define clinical scope", False, "Does not quantify operational eligibility"),
+            ("clinical_eligibility_share", "unavailable", "modelled assumption", "not selected", "none", "Not permitted without explicit assumption", True, "Required before target population calculation"),
+            ("gkv_share", "unavailable_for_model", "modelled assumption", "not selected", "none", "Not permitted without aligned denominator", True, "Resident population cannot be mapped silently to GKV"),
+            ("uptake", "unavailable", "modelled assumption", "not selected", "none", "Not permitted without explicit assumption", True, "Required for treated population"),
+            ("annual_treatment_cost", "unavailable", "economic parameter", "not selected", "none", "No annual per-patient estimate", True, "WIdO aggregate costs are not an obesity-dose patient cost"),
+            ("weight_change_effect", "available_with_limitations", "literature parameter", "STEP 1; DOI 10.1056/NEJMoa2032183", "high internal; limited transferability", "Clinical context only", False, "Trial efficacy is not German effectiveness or savings"),
+            ("adverse_event_discontinuation", "available_with_limitations", "literature parameter", "STEP 1; DOI 10.1056/NEJMoa2032183", "high internal; limited transferability", "Safety/tolerability context only", False, "Not long-term real-world persistence"),
+            ("long_term_persistence", "unavailable", "literature parameter or modelled assumption", "not selected", "none", "Not permitted without evidence/assumption", True, "68-week trial discontinuation is not long-term persistence"),
+            ("avoidable_cost_fraction", "unavailable", "economic parameter or modelled assumption", "not selected", "none", "Not permitted", True, "Destatis costs are all-payer contextual costs"),
+            ("gkv_cost_fraction", "unavailable", "economic parameter or modelled assumption", "not selected", "none", "Not permitted", True, "No attributable GKV fraction selected"),
+            ("benefit_realization", "unavailable", "modelled assumption", "not selected", "none", "Not permitted", True, "Weight loss cannot be translated directly into savings"),
+            ("net_budget_impact", "not_calculated", "derived calculation", "not applicable", "not applicable", "No result available", False, "Multiple central parameters unavailable"),
         ],
-        columns=["parameter", "status", "input_class", "source", "limitation"],
+        columns=["parameter", "status", "input_class", "source", "quality", "permitted_use", "blocks_calculation", "treatment"],
     )
 
 
@@ -358,9 +370,9 @@ def write_tables() -> dict[str, pd.DataFrame]:
         "fact_disease_cost_observed": disease_cost,
         "raw_inventory": inventory,
     }
-    dictionary = build_data_dictionary(tables)
     controls = build_controls(tables)
     framework = build_scenario_framework()
+    dictionary = build_data_dictionary({**tables, "control_totals": controls, "scenario_framework": framework})
     tables.update(
         {
             "data_dictionary": dictionary,

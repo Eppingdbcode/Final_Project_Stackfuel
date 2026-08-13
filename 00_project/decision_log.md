@@ -468,3 +468,14 @@ A decisão aprovada não inicia a Fase 2 e não autoriza download, ingestão, tr
 - **Justificativa:** os dados disponíveis permitem descrição nacional de prescrições WIdO em 2024, população residente, obesidade autorreferida e custos de doença de todos os pagadores, mas não sustentam impacto orçamentário GKV sem parâmetros centrais adicionais. O deadline operacional de 2026-08-18 exige preservar tempo para montagem e reconciliação manual no Power BI.
 - **Limitações:** população residente não equivale a população GKV; obesidade não equivale a elegibilidade; custos de doença de todos os pagadores não são custos GKV evitáveis; WIdO 2024 não é série temporal; RKI Diabetes não foi adquirido.
 - **Aprovação:** execução autônoma do pacote mínimo e redução de escopo explicitamente autorizadas pelo usuário em 2026-08-13; nenhum merge em `main` foi autorizado.
+
+## D-025 — F6.2 mínima e NO-GO para resultados econômicos
+
+- **Data:** 2026-08-13
+- **Tarefa:** F6.2 e gate para Fases 7–8.
+- **Recorte:** semaglutida/Wegovy 2,4 mg semanal para controle de peso em adultos sem diabetes, comparada a placebo, ambos com intervenção de estilo de vida, horizonte clínico de 68 semanas.
+- **Evidência selecionada:** indicação regulatória EMA; STEP 1 (DOI `10.1056/NEJMoa2032183`) para diferença de mudança percentual de peso sob estimand de política de tratamento e descontinuação por eventos adversos.
+- **Decisão:** classificar F6.2 como `DONE WITH LIMITATIONS` e o gate como `B — SCENARIO FRAMEWORK READY, RESULTS NOT CALCULATED`.
+- **Justificativa:** elegibilidade operacional, participação GKV alinhada, uptake, custo anual por paciente, persistência de longo prazo, frações atribuível/evitável/GKV e realização do benefício permanecem ausentes. Eficácia de ensaio não equivale a efetividade ou economia.
+- **Restrição:** não criar `scenario_parameters`, `scenario_results`, avoided costs, net budget impact ou break-even; F6.3–F8 permanecem não iniciadas.
+- **População:** registrar quebra entre 2021 (base Zensus 2011) e 2022 em diante (base Zensus 2022); não apresentar 2021–2025 como tendência contínua.

@@ -103,7 +103,7 @@ As análises F1.2 a F1.8 são independentes entre si. Cada uma pode ser concluí
 | ID | Status | Tarefa | Prioridade | Esforço | Dependências | Entregável | Aprovação |
 |---|---|---|---|---|---|---|---|
 | F6.1 | DONE | Definir critérios de inclusão das evidências | HIGH | S | F1.8 | `00_project/evidence_inclusion_criteria.md` | SIM — concluída |
-| F6.2 | TODO | Selecionar fontes de eficácia e segurança | HIGH | L | F6.1 | `05_sources/studies/clinical_evidence_register.csv` | NÃO |
+| F6.2 | DONE WITH LIMITATIONS — STEP 1/EMA, escopo mínimo | Selecionar fontes de eficácia e segurança | HIGH | L | F6.1 | `05_sources/studies/clinical_evidence_register.csv` | NÃO |
 | F6.3 | TODO | Extrair redução de peso, risco de diabetes e resultados cardiovasculares | HIGH | L | F6.2 | `02_processed_data/analytical/clinical_effect_parameters.csv` | NÃO |
 | F6.4 | TODO | Extrair interrupção e persistência do tratamento | HIGH | M | F6.2 | `02_processed_data/analytical/treatment_persistence_parameters.csv` | NÃO |
 | F6.5 | TODO | Definir custos de tratamento e custos potencialmente evitáveis | HIGH | L | F5.7 | `02_processed_data/analytical/economic_parameters.csv` | NÃO |
@@ -170,7 +170,7 @@ Bloco F2.2–F2.8 encerrado em 2026-08-13 como `COMPLETE WITH LIMITATIONS`, conf
 | F2.4 | DONE — duas publicações oficiais preservadas | Adquirir e preservar dados RKI Obesity | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_geda/` | NÃO |
 | F2.5 | DONE | Adquirir e preservar dados Destatis | HIGH | M | F2.1 | Dois exports nacionais em `01_raw_data/destatis/` | NÃO |
 | F2.6 | DONE | Preservar documentação oficial e estudos selecionados | MEDIUM | M | F2.1 | Registro mínimo de URLs oficiais | NÃO |
-| F6.2 | TODO | Selecionar fontes de eficácia e segurança | HIGH | L | F6.1 | `05_sources/studies/clinical_evidence_register.csv` | NÃO |
+| F6.2 | DONE WITH LIMITATIONS — STEP 1/EMA, escopo mínimo | Selecionar fontes de eficácia e segurança | HIGH | L | F6.1 | `05_sources/studies/clinical_evidence_register.csv` | NÃO |
 
 ## Definition of Done
 

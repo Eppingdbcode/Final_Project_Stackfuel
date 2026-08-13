@@ -1,9 +1,16 @@
-﻿parameter,status,input_class,source,limitation
-resident_population,available,official population estimate,Destatis 12411-0005,Not GKV population
-obesity_prevalence,available_with_limitations,official survey estimate,RKI GEDA,Self-reported; not eligibility
-clinical_eligibility_share,unavailable,modelled assumption,not selected,Required before target population calculation
-gkv_attribution,unavailable,modelled assumption,not selected,Resident population and all-payer costs cannot be mapped silently
-annual_treatment_cost,unavailable,literature parameter,not selected,F6.2/economic parameter task required
-treatment_effect,unavailable,literature parameter,not selected,F6.2 required
-persistence,unavailable,literature parameter or modelled assumption,not selected,No defensible German long-term input
-net_budget_impact,not_calculated,derived calculation,not applicable,Central parameters unavailable
+﻿parameter,status,input_class,source,quality,permitted_use,blocks_calculation,treatment
+resident_population,available_with_break,official estimate,Destatis 12411-0005,high,Contextual denominator only,False,Use 2025 total; do not treat 2021-2025 as continuous trend
+adult_share,derivable,derived calculation,Destatis 12411-0005,high,May be derived from age rows,False,Not calculated because target population remains blocked downstream
+obesity_prevalence,available_with_limitations,official estimate,RKI GEDA,moderate,Epidemiological context,False,Self-reported; not eligibility
+regulatory_indication,available,regulatory evidence,EMA Wegovy EPAR,high,Define clinical scope,False,Does not quantify operational eligibility
+clinical_eligibility_share,unavailable,modelled assumption,not selected,none,Not permitted without explicit assumption,True,Required before target population calculation
+gkv_share,unavailable_for_model,modelled assumption,not selected,none,Not permitted without aligned denominator,True,Resident population cannot be mapped silently to GKV
+uptake,unavailable,modelled assumption,not selected,none,Not permitted without explicit assumption,True,Required for treated population
+annual_treatment_cost,unavailable,economic parameter,not selected,none,No annual per-patient estimate,True,WIdO aggregate costs are not an obesity-dose patient cost
+weight_change_effect,available_with_limitations,literature parameter,STEP 1; DOI 10.1056/NEJMoa2032183,high internal; limited transferability,Clinical context only,False,Trial efficacy is not German effectiveness or savings
+adverse_event_discontinuation,available_with_limitations,literature parameter,STEP 1; DOI 10.1056/NEJMoa2032183,high internal; limited transferability,Safety/tolerability context only,False,Not long-term real-world persistence
+long_term_persistence,unavailable,literature parameter or modelled assumption,not selected,none,Not permitted without evidence/assumption,True,68-week trial discontinuation is not long-term persistence
+avoidable_cost_fraction,unavailable,economic parameter or modelled assumption,not selected,none,Not permitted,True,Destatis costs are all-payer contextual costs
+gkv_cost_fraction,unavailable,economic parameter or modelled assumption,not selected,none,Not permitted,True,No attributable GKV fraction selected
+benefit_realization,unavailable,modelled assumption,not selected,none,Not permitted,True,Weight loss cannot be translated directly into savings
+net_budget_impact,not_calculated,derived calculation,not applicable,not applicable,No result available,False,Multiple central parameters unavailable

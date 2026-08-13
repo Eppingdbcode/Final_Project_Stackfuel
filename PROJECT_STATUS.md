@@ -7,9 +7,16 @@ Este arquivo registra o progresso do projeto e deve ser atualizado sempre que um
 - Data: 2026-08-13
 - Deadline final: 2026-08-26.
 - Entrega de apresentação: dashboard interativo em Microsoft Power BI, alimentado por tabelas processadas e validadas em Python/Pandas.
-- Status geral: Fases 3 e 4 e a EDA mínima da Fase 5 concluídas `WITH LIMITATIONS` na branch `analysis/powerbi-mvp`. O pacote Power BI descritivo está preparado para montagem manual. F6.2 permanece `TODO / DEFERRED`; cenários econômicos estão `not_calculated` e nenhuma Fase 6–8 foi iniciada.
+- Status geral: pacote descritivo Power BI pronto com limitações. F6.2 mínima concluída `WITH LIMITATIONS` para semaglutida 2,4 mg/STEP 1; gate econômico classificado `B — SCENARIO FRAMEWORK READY, RESULTS NOT CALCULATED`. Fases 7–8 e resultados econômicos não foram iniciados.
 
 ## Tarefas concluídas
+
+### 36. F6.2 mínima e gate econômico
+
+- A indicação EMA e o STEP 1 foram selecionados para o recorte único de semaglutida 2,4 mg em adultos sem diabetes; foram registrados efeito sobre mudança percentual de peso e descontinuação por eventos adversos, com transferibilidade limitada.
+- Não foram encontrados/selecionados parâmetros centrais suficientes para elegibilidade, GKV share alinhada, uptake, custo anual, persistência, custos evitáveis ou realização de benefício.
+- Decisão B: estrutura e lacunas prontas; nenhum cenário conservador/base/ampliado, avoided cost, net budget impact ou break-even foi calculado.
+- A quebra Destatis entre base Zensus 2011 (2021) e Zensus 2022 (2022–2025) foi incorporada à tabela e documentação; a série não deve ser exibida como tendência contínua.
 
 ### 35. Auditoria final do pacote Power BI MVP
 

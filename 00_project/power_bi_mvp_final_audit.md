@@ -99,7 +99,11 @@ Python 3.14.2; pandas 3.0.5; matplotlib 3.11.1; seaborn 0.13.2; openpyxl 3.1.5. 
 | Population | READY WITH LIMITATIONS | Complete acquired national table; resident, not GKV population |
 | Disease costs | READY WITH LIMITATIONS | Real national estimates; all payers and mixed units |
 | Obesity | READY WITH LIMITATIONS | Verified official total estimates; self-reported survey data |
-| Scenarios | NOT READY | Central parameters absent; result explicitly not calculated |
+| Scenarios | NOT READY | F6.2 found limited STEP 1 evidence, but central economic parameters remain absent; result explicitly not calculated |
+
+## F6.2 addendum
+
+The minimum F6.2 assessment selected the EMA Wegovy indication and two STEP 1 parameters for semaglutide 2.4 mg in adults without diabetes. This changes neither the audit classification nor the import set: clinical efficacy/tolerability is contextual, while economic scenarios remain blocked. See `00_project/minimum_economic_model_assessment.md` and `05_sources/studies/clinical_evidence_register.csv`.
 | Data dictionary | READY FOR POWER BI | Complete delivered schema metadata after audit correction |
 | Control totals | READY FOR POWER BI | Eight reproducible expected-versus-actual controls pass |
 | DAX | READY WITH LIMITATIONS | Descriptive measures validated; scenario measure is status only |

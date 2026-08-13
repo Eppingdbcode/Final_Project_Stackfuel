@@ -45,6 +45,8 @@ def test_population_schema_keys_units_and_coverage() -> None:
     assert not frame.duplicated(["reference_date", "age_code"]).any()
     assert not frame["age_code"].isna().any()
     assert set(frame.loc[frame["age_label"] == "Insgesamt", "age_code"]) == {"TOTAL"}
+    assert set(frame.loc[frame["year"] == 2021, "series_basis"]) == {"Census 2011 basis"}
+    assert set(frame.loc[frame["year"] >= 2022, "series_basis"]) == {"Census 2022 basis"}
     assert frame["population_persons"].ge(0).all()
 
 
@@ -69,7 +71,9 @@ def test_scenarios_are_not_calculated_without_parameters() -> None:
     frame = build_scenario_framework()
     status = frame.set_index("parameter")["status"]
     assert status["net_budget_impact"] == "not_calculated"
-    assert status["treatment_effect"] == "unavailable"
+    assert status["weight_change_effect"] == "available_with_limitations"
+    blockers = frame.loc[frame["blocks_calculation"], "parameter"]
+    assert {"clinical_eligibility_share", "annual_treatment_cost", "avoidable_cost_fraction"}.issubset(set(blockers))
 
 
 def test_complete_pipeline_outputs(tmp_path: Path, monkeypatch) -> None:
@@ -85,6 +89,7 @@ def test_complete_pipeline_outputs(tmp_path: Path, monkeypatch) -> None:
     dictionary = tables["data_dictionary"]
     assert {"is_key", "table_key", "table_granularity", "table_denominator"}.issubset(dictionary.columns)
     assert dictionary.groupby("table")["table_key"].nunique().eq(1).all()
+    assert {"control_totals", "scenario_framework"}.issubset(set(dictionary["table"]))
     controls = tables["control_totals"]
     assert len(controls) == 8
     assert set(controls["status"]) == {"pass"}

@@ -15,7 +15,7 @@
     },
     "fact_population_observed": {
       "rows": 435,
-      "columns": 11
+      "columns": 12
     },
     "fact_obesity_observed": {
       "rows": 9,
@@ -30,7 +30,7 @@
       "columns": 17
     },
     "data_dictionary": {
-      "rows": 80,
+      "rows": 97,
       "columns": 13
     },
     "control_totals": {
@@ -38,8 +38,8 @@
       "columns": 8
     },
     "scenario_framework": {
-      "rows": 8,
-      "columns": 5
+      "rows": 15,
+      "columns": 8
     }
   },
   "phase_2_raw_files": 7,
