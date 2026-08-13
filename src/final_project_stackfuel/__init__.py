@@ -1,2 +1,7 @@
 def main() -> None:
-    print("Hello from final-project-stackfuel!")
+    """Run the table-building pipeline without importing it at package load."""
+    from .pipeline import main as run_pipeline
+
+    run_pipeline()
+
+__all__ = ["main"]
