@@ -1,0 +1,29 @@
+WIdO Prescriptions (Thousands) =
+SUM ( fact_wido_observed[prescriptions_thousand] )
+
+WIdO DDD (Thousands) =
+SUM ( fact_wido_observed[ddd_thousand] )
+
+WIdO Net Cost (EUR) =
+SUM ( fact_wido_observed[net_cost_thousand_eur] ) * 1000
+
+WIdO Cost per Prescription (Weighted EUR) =
+DIVIDE ( [WIdO Net Cost (EUR)], [WIdO Prescriptions (Thousands)] * 1000 )
+
+Population (Persons) =
+CALCULATE (
+    SUM ( fact_population_observed[population_persons] ),
+    fact_population_observed[age_label] = "Insgesamt"
+)
+
+Obesity Prevalence (%) =
+MAX ( fact_obesity_observed[estimate_pct] )
+
+Disease Cost (Million EUR) =
+CALCULATE (
+    SUM ( fact_disease_cost_observed[value] ),
+    fact_disease_cost_observed[unit] = "Mill. EUR"
+)
+
+Scenario Result Status =
+"Not calculated - central clinical and economic parameters unavailable"

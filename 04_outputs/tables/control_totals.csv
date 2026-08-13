@@ -1,0 +1,8 @@
+﻿table,metric,expected_value,method,source,tolerance,status
+fact_wido_observed,row_count,4.0,count rows,WIdO A10BJ 2024 group export,0.0,pass
+fact_wido_observed,prescriptions_thousand_sum,2674.0,sum four ingredient rows,WIdO A10BJ 2024 group export,0.05,pass
+fact_wido_observed,net_cost_thousand_eur_sum,582169.1000000001,sum four ingredient rows,WIdO A10BJ 2024 group export,0.05,pass
+fact_population_observed,year_count,5.0,distinct years,Destatis 12411-0005,0.0,pass
+fact_population_observed,2025_total_persons,83467117.0,published Insgesamt row,Destatis 12411-0005,0.0,pass
+fact_obesity_observed,2023_estimate_pct,19.7,Table 2 total estimate,RKI DOI 10.25646/12990,0.0,pass
+fact_disease_cost_observed,row_count,8.0,2 years x 2 diagnoses x 2 metrics,Destatis 23631-0001,0.0,pass

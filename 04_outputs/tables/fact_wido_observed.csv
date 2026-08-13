@@ -1,0 +1,5 @@
+﻿date_key,year,atc_code,active_ingredient,prescriptions_thousand,ddd_thousand,net_cost_thousand_eur,net_cost_per_prescription_eur,net_cost_per_ddd_eur,source_id,input_class,geography,denominator,observation_status
+2024,2024,A10BJ01,Exenatide,30.3,2086.4,8694.0,287.31,4.17,WIDO-PMA,observed administrative data,Germany,GKV outpatient prescriptions billed through covered pharmacies,acquired_group_export
+2024,2024,A10BJ02,Liraglutide,155.9,10419.2,56385.0,361.69,5.41,WIDO-PMA,observed administrative data,Germany,GKV outpatient prescriptions billed through covered pharmacies,acquired_group_export
+2024,2024,A10BJ05,Dulaglutide,1082.9,136078.7,244226.9,225.54,1.79,WIDO-PMA,observed administrative data,Germany,GKV outpatient prescriptions billed through covered pharmacies,acquired_group_export
+2024,2024,A10BJ06,Semaglutide,1404.9,129352.2,272863.2,194.22,2.11,WIDO-PMA,observed administrative data,Germany,GKV outpatient prescriptions billed through covered pharmacies,acquired_group_export

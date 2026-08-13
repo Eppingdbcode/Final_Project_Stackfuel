@@ -458,3 +458,13 @@ A decisão aprovada não inicia a Fase 2 e não autoriza download, ingestão, tr
 - **Fechamento:** F2.7 e F2.8 cobrem todos e somente os sete RAW existentes. Não reabrir WIdO 2012–2023, RKI Diabetes ou busca documental ampla antes da entrega, salvo lacuna indispensável identificada e documentada durante a análise.
 - **Próxima tarefa:** F3.1, criação do inventário dos arquivos adquiridos. A Fase 3 não foi iniciada nesta decisão.
 - **Aprovação:** encerramento mínimo viável explicitamente autorizado pelo usuário em 2026-08-13.
+
+## D-024 — MVP descritivo e adiamento do modelo de cenários
+
+- **Data:** 2026-08-13
+- **Tarefas:** F3.1–F5.7; preparação técnica para Power BI.
+- **Decisão:** entregar primeiro um pacote analítico descritivo, reproduzível e validado, limitado aos dados observados adquiridos. O pipeline gera tabelas finais diretamente em `04_outputs/tables/` e mantém em `02_processed_data/` o inventário analítico reproduzível; uma camada intermediária materializada adicional foi omitida por não acrescentar controle ao escopo mínimo.
+- **F6.2:** permanece `TODO / DEFERRED`. Não foram selecionados parâmetros clínicos, econômicos, de elegibilidade, uptake, persistência ou atribuição GKV. A estrutura de cenários é entregue somente como contrato de dados, com resultados `not_calculated`.
+- **Justificativa:** os dados disponíveis permitem descrição nacional de prescrições WIdO em 2024, população residente, obesidade autorreferida e custos de doença de todos os pagadores, mas não sustentam impacto orçamentário GKV sem parâmetros centrais adicionais. O deadline operacional de 2026-08-18 exige preservar tempo para montagem e reconciliação manual no Power BI.
+- **Limitações:** população residente não equivale a população GKV; obesidade não equivale a elegibilidade; custos de doença de todos os pagadores não são custos GKV evitáveis; WIdO 2024 não é série temporal; RKI Diabetes não foi adquirido.
+- **Aprovação:** execução autônoma do pacote mínimo e redução de escopo explicitamente autorizadas pelo usuário em 2026-08-13; nenhum merge em `main` foi autorizado.

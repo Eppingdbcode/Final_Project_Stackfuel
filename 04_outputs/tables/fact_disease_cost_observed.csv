@@ -1,0 +1,9 @@
+﻿date_key,year,diagnosis_code,diagnosis_label,metric_code,metric,value,unit,quality_flag,source_id,input_class,geography,payer_scope,denominator
+2020,2020,E10-E14,Diabetes mellitus,KOS025,Krankheitskosten,7681.0,Mill. EUR,e,DESTATIS-23631-0001,official disease-cost estimate,Germany,all payers,national total across all payers
+2020,2020,E10-E14,Diabetes mellitus,KOS029,Krankheitskosten je Einwohner,90.0,EUR,e,DESTATIS-23631-0001,official disease-cost estimate,Germany,all payers,resident population
+2020,2020,E65-E68,Adipositas und sonstige Überernährung,KOS025,Krankheitskosten,977.0,Mill. EUR,e,DESTATIS-23631-0001,official disease-cost estimate,Germany,all payers,national total across all payers
+2020,2020,E65-E68,Adipositas und sonstige Überernährung,KOS029,Krankheitskosten je Einwohner,10.0,EUR,e,DESTATIS-23631-0001,official disease-cost estimate,Germany,all payers,resident population
+2023,2023,E10-E14,Diabetes mellitus,KOS025,Krankheitskosten,9685.0,Mill. EUR,e,DESTATIS-23631-0001,official disease-cost estimate,Germany,all payers,national total across all payers
+2023,2023,E10-E14,Diabetes mellitus,KOS029,Krankheitskosten je Einwohner,120.0,EUR,e,DESTATIS-23631-0001,official disease-cost estimate,Germany,all payers,resident population
+2023,2023,E65-E68,Adipositas und sonstige Überernährung,KOS025,Krankheitskosten,1230.0,Mill. EUR,e,DESTATIS-23631-0001,official disease-cost estimate,Germany,all payers,national total across all payers
+2023,2023,E65-E68,Adipositas und sonstige Überernährung,KOS029,Krankheitskosten je Einwohner,10.0,EUR,e,DESTATIS-23631-0001,official disease-cost estimate,Germany,all payers,resident population

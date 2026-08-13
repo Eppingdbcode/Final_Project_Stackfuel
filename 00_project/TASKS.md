@@ -61,42 +61,42 @@ As análises F1.2 a F1.8 são independentes entre si. Cada uma pode ser concluí
 
 | ID | Status | Tarefa | Prioridade | Esforço | Dependências | Entregável | Aprovação |
 |---|---|---|---|---|---|---|---|
-| F3.1 | TODO | Criar inventário dos arquivos adquiridos | HIGH | S | F2.8 | `00_project/data_inventory.md` | NÃO |
-| F3.2 | TODO | Inspecionar esquema e qualidade dos dados WIdO | HIGH | M | F3.1 | `00_project/quality/wido_quality_report.md` | NÃO |
-| F3.3 | TODO | Inspecionar esquema e qualidade dos dados RKI Diabetes | HIGH | M | F3.1 | `00_project/quality/rki_diabetes_quality_report.md` | NÃO |
-| F3.4 | TODO | Inspecionar esquema e qualidade dos dados RKI Obesity | HIGH | M | F3.1 | `00_project/quality/rki_obesity_quality_report.md` | NÃO |
-| F3.5 | TODO | Inspecionar esquema e qualidade dos dados Destatis Disease Costs | HIGH | M | F3.1 | `00_project/quality/destatis_disease_costs_quality_report.md` | NÃO |
-| F3.6 | TODO | Inspecionar esquema e qualidade dos dados Destatis Demographics | HIGH | M | F3.1 | `00_project/quality/destatis_demographics_quality_report.md` | NÃO |
-| F3.7 | TODO | Validar granularidade, quebras temporais e chaves de integração | HIGH | M | F3.2, F3.3, F3.4, F3.5, F3.6 | `00_project/quality/integration_quality_report.md` | NÃO |
-| F3.8 | TODO | Criar o dicionário inicial de dados | HIGH | M | F3.2, F3.3, F3.4, F3.5, F3.6 | `00_project/data_dictionary.md` | NÃO |
-| F3.9 | TODO | Consolidar e aprovar a avaliação de qualidade | HIGH | S | F3.7, F3.8 | `00_project/data_quality_summary.md` | SIM — antes do processamento |
+| F3.1 | DONE | Criar inventário dos arquivos adquiridos | HIGH | S | F2.8 | `00_project/data_inventory.md` | NÃO |
+| F3.2 | DONE | Inspecionar esquema e qualidade dos dados WIdO | HIGH | M | F3.1 | `00_project/quality/wido_quality_report.md` | NÃO |
+| F3.3 | BLOCKED / NOT ACQUIRED | Inspecionar esquema e qualidade dos dados RKI Diabetes | HIGH | M | F3.1 | `00_project/quality/rki_diabetes_quality_report.md` | NÃO |
+| F3.4 | DONE | Inspecionar esquema e qualidade dos dados RKI Obesity | HIGH | M | F3.1 | `00_project/quality/rki_obesity_quality_report.md` | NÃO |
+| F3.5 | DONE | Inspecionar esquema e qualidade dos dados Destatis Disease Costs | HIGH | M | F3.1 | `00_project/quality/destatis_disease_costs_quality_report.md` | NÃO |
+| F3.6 | DONE | Inspecionar esquema e qualidade dos dados Destatis Demographics | HIGH | M | F3.1 | `00_project/quality/destatis_demographics_quality_report.md` | NÃO |
+| F3.7 | DONE WITH LIMITATIONS | Validar granularidade, quebras temporais e chaves de integração | HIGH | M | F3.2, F3.3, F3.4, F3.5, F3.6 | `00_project/quality/integration_quality_report.md` | NÃO |
+| F3.8 | DONE | Criar o dicionário inicial de dados | HIGH | M | F3.2, F3.3, F3.4, F3.5, F3.6 | `00_project/data_dictionary.md` | NÃO |
+| F3.9 | DONE WITH LIMITATIONS | Consolidar e aprovar a avaliação de qualidade | HIGH | S | F3.7, F3.8 | `00_project/data_quality_summary.md` | SIM — autorização integrada do MVP em 2026-08-13 |
 
 ## Fase 4 — Processamento e datasets analíticos
 
 | ID | Status | Tarefa | Prioridade | Esforço | Dependências | Entregável | Aprovação |
 |---|---|---|---|---|---|---|---|
-| F4.1 | TODO | Definir e aprovar regras de limpeza por dataset | HIGH | M | F3.9 | `00_project/processing_rules.md` | SIM — antes de transformar dados |
-| F4.2 | TODO | Implementar camada intermediária reproduzível | HIGH | L | F4.1 | Arquivos e pipeline em `02_processed_data/intermediate/` | NÃO |
-| F4.3 | TODO | Padronizar colunas, datas, unidades, códigos e categorias | HIGH | L | F4.2 | Datasets intermediários padronizados | NÃO |
-| F4.4 | TODO | Tratar ausências e duplicidades conforme regras aprovadas | HIGH | M | F4.3 | Datasets intermediários validados | NÃO |
-| F4.5 | TODO | Construir dataset analítico WIdO GLP-1/GIP | HIGH | L | F4.4 | `02_processed_data/analytical/glp1_gkv_longitudinal.csv` | NÃO |
-| F4.6 | TODO | Construir dataset analítico RKI Diabetes | HIGH | L | F4.4 | `02_processed_data/analytical/diabetes.csv` | NÃO |
-| F4.7 | TODO | Construir dataset analítico RKI Obesity | HIGH | L | F4.4 | `02_processed_data/analytical/obesity.csv` | NÃO |
-| F4.8 | TODO | Construir dataset analítico Destatis Disease Costs | HIGH | L | F4.4 | `02_processed_data/analytical/disease_costs.csv` | NÃO |
-| F4.9 | TODO | Construir dataset analítico Destatis Demographics | HIGH | L | F4.4 | `02_processed_data/analytical/demographics.csv` | NÃO |
-| F4.10 | TODO | Validar datasets, linhagem e dicionário de dados | HIGH | M | F4.5, F4.6, F4.7, F4.8, F4.9 | `00_project/processed_data_validation.md` e dicionário atualizado | SIM — encerramento da Fase 4 |
+| F4.1 | DONE | Definir e aprovar regras de limpeza por dataset | HIGH | M | F3.9 | `00_project/processing_rules.md` | SIM — autorização integrada do MVP em 2026-08-13 |
+| F4.2 | DONE — MVP direto | Implementar camada intermediária reproduzível | HIGH | L | F4.1 | Pipeline em `src/`; inventário em `02_processed_data/`; tabelas finais em `04_outputs/tables/` | NÃO |
+| F4.3 | DONE | Padronizar colunas, datas, unidades, códigos e categorias | HIGH | L | F4.2 | Tabelas finais padronizadas | NÃO |
+| F4.4 | DONE | Tratar ausências e duplicidades conforme regras aprovadas | HIGH | M | F4.3 | Validações automatizadas e controles | NÃO |
+| F4.5 | DONE WITH LIMITATIONS — corte 2024 | Construir dataset analítico WIdO GLP-1/GIP | HIGH | L | F4.4 | `04_outputs/tables/fact_wido_observed.csv` | NÃO |
+| F4.6 | NOT APPLICABLE — fonte não adquirida | Construir dataset analítico RKI Diabetes | HIGH | L | F4.4 | Ausência documentada; nenhum substituto | NÃO |
+| F4.7 | DONE | Construir dataset analítico RKI Obesity | HIGH | L | F4.4 | `04_outputs/tables/fact_obesity_observed.csv` | NÃO |
+| F4.8 | DONE | Construir dataset analítico Destatis Disease Costs | HIGH | L | F4.4 | `04_outputs/tables/fact_disease_cost_observed.csv` | NÃO |
+| F4.9 | DONE | Construir dataset analítico Destatis Demographics | HIGH | L | F4.4 | `04_outputs/tables/fact_population_observed.csv` | NÃO |
+| F4.10 | DONE WITH LIMITATIONS | Validar datasets, linhagem e dicionário de dados | HIGH | M | F4.5, F4.6, F4.7, F4.8, F4.9 | `00_project/processed_data_validation.md` e dicionário atualizado | SIM — encerramento do MVP da Fase 4 |
 
 ## Fase 5 — Análise exploratória dos dados observados
 
 | ID | Status | Tarefa | Prioridade | Esforço | Dependências | Entregável | Aprovação |
 |---|---|---|---|---|---|---|---|
-| F5.1 | TODO | Analisar prescrições, DDD, gastos, custos unitários e moléculas | HIGH | L | F4.5 | `03_notebooks/01_glp1_market_eda.ipynb` e outputs verificados | NÃO |
-| F5.2 | TODO | Analisar incidência e prevalência de diabetes | HIGH | M | F4.6 | `03_notebooks/02_diabetes_eda.ipynb` e outputs verificados | NÃO |
-| F5.3 | TODO | Analisar obesidade e distribuição de BMI | HIGH | M | F4.7 | `03_notebooks/03_obesity_eda.ipynb` e outputs verificados | NÃO |
-| F5.4 | TODO | Analisar custos de diabetes e obesidade | HIGH | M | F4.8 | `03_notebooks/04_disease_costs_eda.ipynb` e outputs verificados | NÃO |
-| F5.5 | TODO | Analisar mudanças demográficas relevantes | MEDIUM | M | F4.9 | `03_notebooks/05_demographics_eda.ipynb` e outputs verificados | NÃO |
-| F5.6 | TODO | Comparar tendências e identificar lacunas sem inferência causal indevida | HIGH | M | F5.1, F5.2, F5.3, F5.4, F5.5 | `04_outputs/reports/observed_data_eda.md` | NÃO |
-| F5.7 | TODO | Consolidar fatos, hipóteses, limitações, tabelas e gráficos da EDA | HIGH | M | F5.6 | `04_outputs/reports/eda_summary.md` | SIM — encerramento da Fase 5 |
+| F5.1 | DONE WITH LIMITATIONS — descritiva 2024 | Analisar prescrições, DDD, gastos, custos unitários e moléculas | HIGH | L | F4.5 | `04_outputs/reports/observed_data_eda.md` | NÃO |
+| F5.2 | NOT APPLICABLE — fonte não adquirida | Analisar incidência e prevalência de diabetes | HIGH | M | F4.6 | Ausência documentada; nenhum substituto | NÃO |
+| F5.3 | DONE WITH LIMITATIONS — agregado total | Analisar obesidade e distribuição de BMI | HIGH | M | F4.7 | `04_outputs/reports/observed_data_eda.md` | NÃO |
+| F5.4 | DONE WITH LIMITATIONS — todos os pagadores | Analisar custos de diabetes e obesidade | HIGH | M | F4.8 | `04_outputs/reports/observed_data_eda.md` | NÃO |
+| F5.5 | DONE — escopo nacional mínimo | Analisar mudanças demográficas relevantes | MEDIUM | M | F4.9 | `04_outputs/reports/observed_data_eda.md` | NÃO |
+| F5.6 | DONE WITH LIMITATIONS | Comparar tendências e identificar lacunas sem inferência causal indevida | HIGH | M | F5.1, F5.2, F5.3, F5.4, F5.5 | `04_outputs/reports/observed_data_eda.md` | NÃO |
+| F5.7 | DONE WITH LIMITATIONS — MVP descritivo | Consolidar fatos, hipóteses, limitações, tabelas e gráficos da EDA | HIGH | M | F5.6 | `04_outputs/reports/observed_data_eda.md` | SIM — autorização integrada do MVP em 2026-08-13 |
 
 ## Fase 6 — Parâmetros clínicos e econômicos
 

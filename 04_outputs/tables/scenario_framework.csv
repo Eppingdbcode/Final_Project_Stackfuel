@@ -1,0 +1,9 @@
+﻿parameter,status,input_class,source,limitation
+resident_population,available,official population estimate,Destatis 12411-0005,Not GKV population
+obesity_prevalence,available_with_limitations,official survey estimate,RKI GEDA,Self-reported; not eligibility
+clinical_eligibility_share,unavailable,modelled assumption,not selected,Required before target population calculation
+gkv_attribution,unavailable,modelled assumption,not selected,Resident population and all-payer costs cannot be mapped silently
+annual_treatment_cost,unavailable,literature parameter,not selected,F6.2/economic parameter task required
+treatment_effect,unavailable,literature parameter,not selected,F6.2 required
+persistence,unavailable,literature parameter or modelled assumption,not selected,No defensible German long-term input
+net_budget_impact,not_calculated,derived calculation,not applicable,Central parameters unavailable

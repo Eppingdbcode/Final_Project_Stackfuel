@@ -7,9 +7,21 @@ Este arquivo registra o progresso do projeto e deve ser atualizado sempre que um
 - Data: 2026-08-13
 - Deadline final: 2026-08-26.
 - Entrega de apresentação: dashboard interativo em Microsoft Power BI, alimentado por tabelas processadas e validadas em Python/Pandas.
-- Status geral: Fase 2 encerrada como `COMPLETE WITH LIMITATIONS` sob D-023. Sete RAW locais foram inventariados e validados. WIdO cobre somente 2024 e não constitui matriz 2012–2024; RKI Diabetes não foi adquirido; RKI/GEDA e os dois componentes nacionais mínimos Destatis foram adquiridos. Fase 3, F6.2 e Power BI não foram iniciados.
+- Status geral: Fases 3 e 4 e a EDA mínima da Fase 5 concluídas `WITH LIMITATIONS` na branch `analysis/powerbi-mvp`. O pacote Power BI descritivo está preparado para montagem manual. F6.2 permanece `TODO / DEFERRED`; cenários econômicos estão `not_calculated` e nenhuma Fase 6–8 foi iniciada.
 
 ## Tarefas concluídas
+
+### 34. Pacote analítico mínimo para Power BI — `READY FOR MANUAL BUILD`
+
+- Os sete RAW locais foram inventariados e tiveram caminho, tamanho e SHA-256 reconciliados com manifesto e checksums; nenhum RAW foi alterado ou adicionado ao Git.
+- Um pipeline Python/Pandas reutilizável em `src/final_project_stackfuel/pipeline.py` processa diretamente os dados observados sustentados pelas fontes e produz tabelas finais em `04_outputs/tables/`.
+- WIdO contém somente quatro observações transversais de 2024; os dois exports Semaglutida byte-idênticos não foram contados como observações adicionais.
+- Foram produzidas dimensões, fatos observados de WIdO, população, obesidade e custos de doença, dicionário, totais de controle, inventário e contrato de cenários. As classes, unidades, denominadores e limitações permanecem explícitas.
+- RKI Diabetes continua ausente e sem substituto. População residente não foi rotulada como GKV; custos de doença permanecem todos os pagadores; obesidade não foi tratada como elegibilidade clínica.
+- Sete testes automatizados cobrem integridade do inventário, duplicação WIdO, esquemas, chaves, cobertura, intervalos e proibição de resultados de cenário sem parâmetros.
+- O pacote `04_outputs/power_bi/` documenta modelo estrela, relacionamentos, cardinalidades, medidas DAX, páginas, KPIs, slicers, avisos, importação e reconciliação. Um `.pbix` não foi criado porque sua montagem e validação exigem ação manual no Power BI Desktop.
+- F6.2 permanece adiada. Não há parâmetros clínicos/econômicos aprovados nem net budget impact calculado; a quarta página proposta é `Scenario Framework / Data Gaps`.
+- Próxima tarefa única: montar o dashboard no Power BI Desktop a partir do pacote validado e executar o checklist de reconciliação, sem iniciar cenários até decisão específica sobre F6.2.
 
 ### 33. Encerramento da Fase 2 — `COMPLETE WITH LIMITATIONS`
 

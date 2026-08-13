@@ -2,15 +2,23 @@
 
 ## Current operational handoff — 2026-08-13
 
-- **Official root:** `C:\Users\eppin\Desktop\Final_Project_Stackfuel`; GitHub: `https://github.com/Eppingdbcode/Final_Project_Stackfuel.git`; operational branch: `main`.
+- **Official root:** `C:\Users\eppin\Desktop\Final_Project_Stackfuel`; GitHub: `https://github.com/Eppingdbcode/Final_Project_Stackfuel.git`; operational branch: `analysis/powerbi-mvp` (not merged into `main`).
 - **Temporary backup:** `C:\Users\eppin\GLP1_Germany_Final_Project` remains intact and must not be edited or removed without an explicit later decision.
 - **Deadline:** 2026-08-26.
 - **Final presentation:** interactive Microsoft Power BI dashboard. Python/Pandas prepares and validates analytical tables; Power BI must reconcile metrics, filters, units, denominators and results with Python controls and visibly distinguish observed data from assumptions.
 - **Environment:** UV is the sole manager; `.python-version`, `pyproject.toml`, `uv.lock` and the UV-managed `.venv` are the sources of truth. `environment.yml` exists only in the backup.
 - **Operational memory:** `AGENTS.md`, `PROJECT_STATUS.md`, `00_project/TASKS.md`, `00_project/decision_log.md` and this handoff; operational details are in `00_project/WORKFLOW.md`.
-- **Last completed task:** operational-memory update from the validated historical handoff.
-- **Current state:** Phase 2 is `COMPLETE WITH LIMITATIONS` under D-023. Seven local RAW files are recorded and checksum-validated. WIdO acquisition is limited to 2024; RKI Diabetes is `BLOCKED / NOT ACQUIRED`; RKI/GEDA and the minimum national Destatis population and disease-cost exports are acquired. Phase 3, F6.2 and Power BI have not started.
-- **Next task:** execute only F3.1 — create the acquired-file inventory — then continue through the Phase 3 quality gates. Do not reopen WIdO 2012–2023, RKI Diabetes or broad documentation searches before delivery unless an indispensable analytical gap is explicitly identified.
+- **Last completed task:** reproducible observed-data pipeline, quality gates and Power BI-ready descriptive package.
+- **Current state:** Phases 3 and 4 and the minimum observed-data EDA are complete with documented limitations on `analysis/powerbi-mvp`. Seven local RAW files remain checksum-validated and ignored. The Power BI package contains validated tables, controls, a proposed semantic model, DAX and build/reconciliation instructions. No `.pbix` has been created. F6.2 is `TODO / DEFERRED`; no economic scenario result exists.
+- **Next task:** build the four-page descriptive dashboard manually in Power BI Desktop from `04_outputs/tables/`, then execute `04_outputs/power_bi/validation_checklist.md`. Do not begin F6.2 or calculate scenario results without a separate evidence-parameter decision.
+
+### Analytical MVP handoff
+
+- Run `uv run python -m final_project_stackfuel.pipeline` from the repository root to regenerate the outputs.
+- Run `uv run pytest -p no:cacheprovider` to validate source integrity, schemas, keys, coverage, duplicate handling and scenario safeguards.
+- Power BI pages: `Executive Overview`, `Observed Data`, `Scenario Framework / Data Gaps`, and `Methods and Limitations`.
+- WIdO is a 2024 cross-section, not a trend. RKI obesity estimates are contextual and based on self-reported height/weight. Destatis population is resident population; disease costs cover all payers and E10–E14 is not isolated type 2 diabetes.
+- The scenario framework contains required fields and statuses only. `net_budget_impact` is `not_calculated`; no missing parameter was silently imputed.
 
 ### Authorized WIdO scope
 

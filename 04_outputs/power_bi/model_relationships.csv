@@ -1,0 +1,6 @@
+from_table,from_column,to_table,to_column,cardinality,cross_filter_direction,active,reason
+dim_date,date_key,fact_wido_observed,date_key,one-to-many,single,true,Filter the 2024 WIdO cross-section
+dim_date,date_key,fact_population_observed,date_key,one-to-many,single,true,Filter population reference years
+dim_date,date_key,fact_obesity_observed,date_key,one-to-many,single,true,Preserve published survey periods
+dim_date,date_key,fact_disease_cost_observed,date_key,one-to-many,single,true,Filter disease-cost years
+dim_substance,atc_code,fact_wido_observed,atc_code,one-to-many,single,true,Filter four observed A10BJ ingredients

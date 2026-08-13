@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "tables": {
+    "dim_date": {
+      "rows": 13,
+      "columns": 4
+    },
+    "dim_substance": {
+      "rows": 4,
+      "columns": 5
+    },
+    "fact_wido_observed": {
+      "rows": 4,
+      "columns": 14
+    },
+    "fact_population_observed": {
+      "rows": 435,
+      "columns": 11
+    },
+    "fact_obesity_observed": {
+      "rows": 9,
+      "columns": 15
+    },
+    "fact_disease_cost_observed": {
+      "rows": 8,
+      "columns": 14
+    },
+    "raw_inventory": {
+      "rows": 7,
+      "columns": 17
+    },
+    "data_dictionary": {
+      "rows": 80,
+      "columns": 9
+    },
+    "control_totals": {
+      "rows": 7,
+      "columns": 7
+    },
+    "scenario_framework": {
+      "rows": 8,
+      "columns": 5
+    }
+  },
+  "phase_2_raw_files": 7,
+  "wido_independent_observations": 4,
+  "scenario_results_status": "not_calculated"
+}
