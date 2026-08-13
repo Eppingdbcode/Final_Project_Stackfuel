@@ -445,3 +445,16 @@ A decisão aprovada não inicia a Fase 2 e não autoriza download, ingestão, tr
 - **Publicação:** licença e redistribuição WIdO permanecem não confirmadas; status `do_not_publish`; nenhum RAW pode ser publicado.
 - **Próxima ação:** iniciar a execução operacional F2.2, não uma nova rodada decisória, e prosseguir sequencialmente até F2.8 dentro da autorização.
 - **Aprovação:** decisão e execução integrada explicitamente autorizadas pelo usuário em 2026-08-12.
+
+## D-023 — Encerramento pragmático da Fase 2
+
+- **Data:** 2026-08-13
+- **Tarefa:** F2.2–F2.8.
+- **Decisão:** encerrar a Fase 2 como `COMPLETE WITH LIMITATIONS`, preservando tempo para processamento, cenários, validação e Power BI antes do deadline de 2026-08-26.
+- **WIdO:** classificar F2.2 como aquisição parcial concluída. Foram adquiridos dois caminhos byte-idênticos do export Semaglutid/A10BJ06 de 2024 e um export agregado A10BJ de 2024. Os quatro ingredientes foram confirmados como linhas do agregado, não como quatro exports individuais. Anos 2012–2023 e tirzepatida não foram adquiridos.
+- **RKI Diabetes:** classificar F2.3 como `BLOCKED / NOT ACQUIRED`; os URLs aprovados redirecionam e a tentativa final limitada não localizou os XLSX. Não selecionar silenciosamente substituto. O componente é contextual e não bloqueia o modelo nacional central.
+- **Destatis:** aceitar como escopo mínimo nacional os exports `12411-0005` para população por idade e `23631-0001` para custos por diagnóstico. Custos são de todos os pagadores e não equivalem a custos GKV ou evitáveis.
+- **Documentação:** concluir F2.6 com referências oficiais indispensáveis registradas por URL, sem levantamento bibliográfico amplo e sem seleção quantitativa de parâmetros, reservada à F6.2.
+- **Fechamento:** F2.7 e F2.8 cobrem todos e somente os sete RAW existentes. Não reabrir WIdO 2012–2023, RKI Diabetes ou busca documental ampla antes da entrega, salvo lacuna indispensável identificada e documentada durante a análise.
+- **Próxima tarefa:** F3.1, criação do inventário dos arquivos adquiridos. A Fase 3 não foi iniciada nesta decisão.
+- **Aprovação:** encerramento mínimo viável explicitamente autorizado pelo usuário em 2026-08-13.

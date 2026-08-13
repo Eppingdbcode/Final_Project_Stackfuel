@@ -7,9 +7,19 @@ Este arquivo registra o progresso do projeto e deve ser atualizado sempre que um
 - Data: 2026-08-13
 - Deadline final: 2026-08-26.
 - Entrega de apresentação: dashboard interativo em Microsoft Power BI, alimentado por tabelas processadas e validadas em Python/Pandas.
-- Status geral: execução integrada F2.2–F2.8 iniciada. F2.2 permanece parcial após confirmação oficial dos ingredientes A10BJ de 2024; F2.3 está bloqueada porque os URLs aprovados redirecionam e os XLSX legados não foram localizados; F2.4 foi concluída com duas publicações oficiais RKI/GEDA preservadas. F2.5–F2.6 e o encerramento de F2.7–F2.8 permanecem pendentes. A Fase 3 não foi iniciada.
+- Status geral: Fase 2 encerrada como `COMPLETE WITH LIMITATIONS` sob D-023. Sete RAW locais foram inventariados e validados. WIdO cobre somente 2024 e não constitui matriz 2012–2024; RKI Diabetes não foi adquirido; RKI/GEDA e os dois componentes nacionais mínimos Destatis foram adquiridos. Fase 3, F6.2 e Power BI não foram iniciados.
 
 ## Tarefas concluídas
+
+### 33. Encerramento da Fase 2 — `COMPLETE WITH LIMITATIONS`
+
+- F2.2 foi encerrada com aquisição parcial: dois caminhos byte-idênticos do export Semaglutid/A10BJ06 de 2024 e um export agregado da consulta A10BJ de 2024. O agregado contém linhas para os quatro ingredientes confirmados, mas não equivale a quatro exports individuais. Nenhum ano de 2012 a 2023 foi adquirido; tirzepatida não foi adquirida.
+- F2.3 foi encerrada como `BLOCKED / NOT ACQUIRED`: os URLs aprovados redirecionam para a nova área GBE e a tentativa final limitada não localizou os XLSX. O componente permanece contextual e sua ausência não impede a análise nacional central.
+- F2.4 permanece concluída com duas publicações oficiais RKI/GEDA.
+- F2.5 foi concluída no escopo mínimo nacional com os exports GENESIS `12411-0005` (população por idade, 2021–2025) e `23631-0001` (custos por diagnóstico, 2020 e 2023).
+- F2.6 foi concluída com registro mínimo de referências oficiais por URL; nenhum levantamento amplo ou seleção quantitativa de parâmetros clínicos foi realizado.
+- F2.7 e F2.8 foram concluídas para o inventário final de sete RAW, com caminhos, tamanhos, SHA-256, duplicata WIdO, licenças e limitações validados.
+- Não reabrir WIdO 2012–2023, RKI Diabetes ou busca documental ampla antes da entrega, salvo lacuna indispensável identificada na análise. Próxima tarefa única elegível: F3.1, sem iniciá-la nesta execução.
 
 ### 32. Execução parcial do bloco F2.2–F2.8
 

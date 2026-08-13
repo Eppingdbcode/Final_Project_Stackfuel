@@ -9,8 +9,8 @@
 - **Environment:** UV is the sole manager; `.python-version`, `pyproject.toml`, `uv.lock` and the UV-managed `.venv` are the sources of truth. `environment.yml` exists only in the backup.
 - **Operational memory:** `AGENTS.md`, `PROJECT_STATUS.md`, `00_project/TASKS.md`, `00_project/decision_log.md` and this handoff; operational details are in `00_project/WORKFLOW.md`.
 - **Last completed task:** operational-memory update from the validated historical handoff.
-- **Current state:** integrated F2.2–F2.8 execution is incomplete. F2.2 remains partial; F2.3 is blocked by retired/redirected legacy download pages; F2.4 is complete with two official RKI/GEDA PDFs; F2.5–F2.6 and final closure of F2.7–F2.8 remain pending. Phase 3 has not started.
-- **Next task:** resume the authorized block by resolving the official WIdO per-ingredient export workflow, locating the current official RKI Diabetes replacement for the approved XLSX, then execute F2.5–F2.8 without starting Phase 3.
+- **Current state:** Phase 2 is `COMPLETE WITH LIMITATIONS` under D-023. Seven local RAW files are recorded and checksum-validated. WIdO acquisition is limited to 2024; RKI Diabetes is `BLOCKED / NOT ACQUIRED`; RKI/GEDA and the minimum national Destatis population and disease-cost exports are acquired. Phase 3, F6.2 and Power BI have not started.
+- **Next task:** execute only F3.1 — create the acquired-file inventory — then continue through the Phase 3 quality gates. Do not reopen WIdO 2012–2023, RKI Diabetes or broad documentation searches before delivery unless an indispensable analytical gap is explicitly identified.
 
 ### Authorized WIdO scope
 
