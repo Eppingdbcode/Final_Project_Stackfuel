@@ -90,7 +90,9 @@ def build_population() -> pd.DataFrame:
             "date_key": raw["time"].str[:4],
             "reference_date": pd.to_datetime(raw["time"], errors="raise").dt.date.astype(str),
             "year": pd.to_datetime(raw["time"], errors="raise").dt.year.astype("int64"),
-            "age_code": raw["2_variable_attribute_code"],
+            # GENESIS leaves the published national-total code blank. Assign a
+            # derived, documented key so Power BI never receives a null key.
+            "age_code": raw["2_variable_attribute_code"].fillna("TOTAL"),
             "age_label": raw["2_variable_attribute_label"],
             "population_persons": pd.to_numeric(raw["value"], errors="raise").astype("int64"),
             "unit": raw["value_unit"],
@@ -256,6 +258,15 @@ def build_inventory() -> pd.DataFrame:
 
 
 def build_data_dictionary(tables: dict[str, pd.DataFrame]) -> pd.DataFrame:
+    table_metadata = {
+        "dim_date": ("date_key", "one row per published year or survey period", "not applicable", "project-derived", "derived metadata"),
+        "dim_substance": ("atc_code", "one row per included ATC substance", "not applicable", "WIdO A10BJ 2024 group export", "derived metadata"),
+        "fact_wido_observed": ("date_key + atc_code", "Germany x 2024 x active ingredient", "GKV outpatient prescriptions billed through covered pharmacies", "WIdO A10BJ 2024 group export", "observed administrative data"),
+        "fact_population_observed": ("reference_date + age_code", "Germany x reference date x single year of age or published total", "registered resident population at year end", "Destatis 12411-0005", "official population estimate"),
+        "fact_obesity_observed": ("date_key", "Germany x published survey period x total adult stratum", "weighted adult survey population", "RKI Table 2, DOI 10.25646/12990", "official survey estimate"),
+        "fact_disease_cost_observed": ("date_key + diagnosis_code + metric_code", "Germany x year x selected ICD group x metric", "row-specific: national all-payer total or resident population", "Destatis 23631-0001", "official disease-cost estimate"),
+        "raw_inventory": ("file", "one row per acquired RAW path", "not applicable", "Phase 2 RAW manifest", "mixed; see row input_class"),
+    }
     descriptions = {
         "date_key": ("Stable period key for relationships", "not applicable", "table-specific"),
         "year": ("Calendar year", "year", "not applicable"),
@@ -266,6 +277,8 @@ def build_data_dictionary(tables: dict[str, pd.DataFrame]) -> pd.DataFrame:
     }
     rows = []
     for table_name, frame in tables.items():
+        table_key, granularity, table_denominator, table_source, table_input_class = table_metadata[table_name]
+        key_columns = {part.strip() for part in table_key.split("+")}
         for column, dtype in frame.dtypes.items():
             desc, unit, denominator = descriptions.get(column, (column.replace("_", " "), "see table", "see table"))
             rows.append(
@@ -274,10 +287,14 @@ def build_data_dictionary(tables: dict[str, pd.DataFrame]) -> pd.DataFrame:
                     "column": column,
                     "type": str(dtype),
                     "description": desc,
+                    "is_key": column in key_columns,
+                    "table_key": table_key,
+                    "table_granularity": granularity,
+                    "table_denominator": table_denominator,
                     "unit": unit,
                     "denominator": denominator,
-                    "input_class": "mixed; see row input_class" if "input_class" in frame else "derived metadata",
-                    "source": "see source_id in fact table" if "source_id" in frame else "project-derived",
+                    "input_class": table_input_class,
+                    "source": table_source,
                     "limitations": "Preserve source scope and denominator; do not infer missing dimensions",
                 }
             )
@@ -290,18 +307,21 @@ def build_controls(tables: dict[str, pd.DataFrame]) -> pd.DataFrame:
     obesity = tables["fact_obesity_observed"]
     costs = tables["fact_disease_cost_observed"]
     controls = [
-        ("fact_wido_observed", "row_count", 4.0, "count rows", "WIdO A10BJ 2024 group export", 0.0),
-        ("fact_wido_observed", "prescriptions_thousand_sum", float(wido["prescriptions_thousand"].sum()), "sum four ingredient rows", "WIdO A10BJ 2024 group export", 0.05),
-        ("fact_wido_observed", "net_cost_thousand_eur_sum", float(wido["net_cost_thousand_eur"].sum()), "sum four ingredient rows", "WIdO A10BJ 2024 group export", 0.05),
-        ("fact_population_observed", "year_count", float(pop["year"].nunique()), "distinct years", "Destatis 12411-0005", 0.0),
-        ("fact_population_observed", "2025_total_persons", float(pop.loc[(pop.year == 2025) & (pop.age_label == "Insgesamt"), "population_persons"].iloc[0]), "published Insgesamt row", "Destatis 12411-0005", 0.0),
-        ("fact_obesity_observed", "2023_estimate_pct", float(obesity.loc[obesity.date_key == "2023", "estimate_pct"].iloc[0]), "Table 2 total estimate", "RKI DOI 10.25646/12990", 0.0),
-        ("fact_disease_cost_observed", "row_count", float(len(costs)), "2 years x 2 diagnoses x 2 metrics", "Destatis 23631-0001", 0.0),
+        ("fact_wido_observed", "row_count", 4.0, float(len(wido)), "count rows", "WIdO A10BJ 2024 group export", 0.0),
+        ("fact_wido_observed", "prescriptions_thousand_sum", 2674.0, float(wido["prescriptions_thousand"].sum()), "sum four ingredient rows", "WIdO A10BJ 2024 group export", 0.05),
+        ("fact_wido_observed", "ddd_thousand_sum", 277936.5, float(wido["ddd_thousand"].sum()), "sum four ingredient rows", "WIdO A10BJ 2024 group export", 0.05),
+        ("fact_wido_observed", "net_cost_thousand_eur_sum", 582169.1, float(wido["net_cost_thousand_eur"].sum()), "sum four ingredient rows", "WIdO A10BJ 2024 group export", 0.05),
+        ("fact_population_observed", "year_count", 5.0, float(pop["year"].nunique()), "distinct years", "Destatis 12411-0005", 0.0),
+        ("fact_population_observed", "2025_total_persons", 83467117.0, float(pop.loc[(pop.year == 2025) & (pop.age_code == "TOTAL"), "population_persons"].iloc[0]), "published Insgesamt row", "Destatis 12411-0005", 0.0),
+        ("fact_obesity_observed", "2023_estimate_pct", 19.7, float(obesity.loc[obesity.date_key == "2023", "estimate_pct"].iloc[0]), "Table 2 total estimate", "RKI DOI 10.25646/12990", 0.0),
+        ("fact_disease_cost_observed", "row_count", 8.0, float(len(costs)), "2 years x 2 diagnoses x 2 metrics", "Destatis 23631-0001", 0.0),
     ]
-    return pd.DataFrame(
+    frame = pd.DataFrame(
         controls,
-        columns=["table", "metric", "expected_value", "method", "source", "tolerance"],
-    ).assign(status="pass")
+        columns=["table", "metric", "expected_value", "actual_value", "method", "source", "tolerance"],
+    )
+    frame["status"] = (frame["actual_value"] - frame["expected_value"]).abs().le(frame["tolerance"]).map({True: "pass", False: "fail"})
+    return frame
 
 
 def build_scenario_framework() -> pd.DataFrame:

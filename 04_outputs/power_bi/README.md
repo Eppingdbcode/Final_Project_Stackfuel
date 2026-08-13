@@ -10,7 +10,7 @@
 
 ## Page 1 - Executive Overview
 
-- KPI cards: WIdO prescriptions (thousands), WIdO net cost (EUR), 2023 obesity prevalence, 2023 diabetes all-payer disease cost.
+- KPI cards: WIdO prescriptions (thousands), WIdO net cost (EUR), `Obesity Prevalence 2023 (%)`, and `Disease Cost - Diabetes 2023 (Million EUR)`.
 - Clustered bar: active ingredient by prescriptions and net costs; title **GKV-reimbursed A10BJ utilization, 2024**.
 - Line: published obesity prevalence by period with lower/upper CI in tooltip.
 - Required banner: **Observed and official estimates only; no net budget impact calculated.**
@@ -46,4 +46,4 @@
 
 ## Reconciliation
 
-After refresh, compare every KPI with `control_totals.csv`. Confirm four WIdO rows, five population years, 2025 total 83,467,117, 2023 obesity prevalence 19.7%, and eight selected disease-cost rows. All control statuses must remain `pass`.
+After refresh, compare every KPI with `control_totals.csv`. Confirm four WIdO rows, five population years, 2025 total 83,467,117, 2023 obesity prevalence 19.7%, and eight selected disease-cost rows. Confirm `expected_value` equals `actual_value` within `tolerance`; all eight control statuses must remain `pass`.

@@ -10,6 +10,6 @@
 - [ ] E10-E14 is labelled diabetes mellitus, not isolated type 2 diabetes.
 - [ ] Obesity estimates display survey period and IC95%.
 - [ ] Scenario status is `not_calculated`; no invented result is displayed.
-- [ ] All seven control totals show `pass`.
+- [ ] All eight control totals show `pass`, with `expected_value` and `actual_value` reconciled within tolerance.
 - [ ] Sources, denominators, units and limitations appear in tooltips/methods.
 - [ ] Refresh completes without manual edits to generated CSVs.

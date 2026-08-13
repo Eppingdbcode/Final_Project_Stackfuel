@@ -8,6 +8,7 @@ import pandas as pd
 from final_project_stackfuel.pipeline import (
     RAW,
     build_disease_cost,
+    build_dimensions,
     build_obesity,
     build_population,
     build_scenario_framework,
@@ -42,6 +43,8 @@ def test_population_schema_keys_units_and_coverage() -> None:
     assert set(frame["year"]) == {2021, 2022, 2023, 2024, 2025}
     assert set(frame["unit"]) == {"Anzahl"}
     assert not frame.duplicated(["reference_date", "age_code"]).any()
+    assert not frame["age_code"].isna().any()
+    assert set(frame.loc[frame["age_label"] == "Insgesamt", "age_code"]) == {"TOTAL"}
     assert frame["population_persons"].ge(0).all()
 
 
@@ -79,3 +82,14 @@ def test_complete_pipeline_outputs(tmp_path: Path, monkeypatch) -> None:
     assert (tmp_path / "outputs/fact_wido_observed.csv").is_file()
     assert (tmp_path / "outputs/control_totals.csv").is_file()
     assert (tmp_path / "outputs/validation_summary.json").is_file()
+    dictionary = tables["data_dictionary"]
+    assert {"is_key", "table_key", "table_granularity", "table_denominator"}.issubset(dictionary.columns)
+    assert dictionary.groupby("table")["table_key"].nunique().eq(1).all()
+    controls = tables["control_totals"]
+    assert len(controls) == 8
+    assert set(controls["status"]) == {"pass"}
+    assert (controls["actual_value"] - controls["expected_value"]).abs().le(controls["tolerance"]).all()
+    facts = [tables[name] for name in ["fact_wido_observed", "fact_population_observed", "fact_obesity_observed", "fact_disease_cost_observed"]]
+    dim_date, dim_substance = build_dimensions(facts)
+    assert dim_date["date_key"].is_unique
+    assert dim_substance["atc_code"].is_unique

@@ -85,7 +85,7 @@
 2021,2021-12-31,2021,ALT083,83-Jährige,644569,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2021,2021-12-31,2021,ALT084,84-Jährige,561973,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2021,2021-12-31,2021,ALT085UM,85 Jahre und mehr,2625444,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
-2021,2021-12-31,2021,,Insgesamt,83237124,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
+2021,2021-12-31,2021,TOTAL,Insgesamt,83237124,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2022,2022-12-31,2022,ALT000,unter 1 Jahr,724711,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2022,2022-12-31,2022,ALT001,1-Jährige,786020,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2022,2022-12-31,2022,ALT002,2-Jährige,773830,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
@@ -172,7 +172,7 @@
 2022,2022-12-31,2022,ALT083,83-Jährige,675973,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2022,2022-12-31,2022,ALT084,84-Jährige,589512,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2022,2022-12-31,2022,ALT085UM,85 Jahre und mehr,2699436,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
-2022,2022-12-31,2022,,Insgesamt,83118501,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
+2022,2022-12-31,2022,TOTAL,Insgesamt,83118501,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2023,2023-12-31,2023,ALT000,unter 1 Jahr,689834,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2023,2023-12-31,2023,ALT001,1-Jährige,739396,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2023,2023-12-31,2023,ALT002,2-Jährige,793110,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
@@ -259,7 +259,7 @@
 2023,2023-12-31,2023,ALT083,83-Jährige,678282,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2023,2023-12-31,2023,ALT084,84-Jährige,630184,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2023,2023-12-31,2023,ALT085UM,85 Jahre und mehr,2844213,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
-2023,2023-12-31,2023,,Insgesamt,83456045,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
+2023,2023-12-31,2023,TOTAL,Insgesamt,83456045,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2024,2024-12-31,2024,ALT000,unter 1 Jahr,673380,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2024,2024-12-31,2024,ALT001,1-Jährige,700940,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2024,2024-12-31,2024,ALT002,2-Jährige,744162,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
@@ -346,7 +346,7 @@
 2024,2024-12-31,2024,ALT083,83-Jährige,641590,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2024,2024-12-31,2024,ALT084,84-Jährige,633529,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2024,2024-12-31,2024,ALT085UM,85 Jahre und mehr,3025803,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
-2024,2024-12-31,2024,,Insgesamt,83577140,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
+2024,2024-12-31,2024,TOTAL,Insgesamt,83577140,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2025,2025-12-31,2025,ALT000,unter 1 Jahr,649611,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2025,2025-12-31,2025,ALT001,1-Jährige,682434,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2025,2025-12-31,2025,ALT002,2-Jährige,702551,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
@@ -433,4 +433,4 @@
 2025,2025-12-31,2025,ALT083,83-Jährige,520745,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2025,2025-12-31,2025,ALT084,84-Jährige,599816,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
 2025,2025-12-31,2025,ALT085UM,85 Jahre und mehr,3193699,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
-2025,2025-12-31,2025,,Insgesamt,83467117,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end
+2025,2025-12-31,2025,TOTAL,Insgesamt,83467117,Anzahl,DESTATIS-12411-0005,official population estimate,Germany,registered resident population at year end

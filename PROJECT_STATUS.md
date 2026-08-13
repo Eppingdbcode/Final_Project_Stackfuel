@@ -11,6 +11,14 @@ Este arquivo registra o progresso do projeto e deve ser atualizado sempre que um
 
 ## Tarefas concluídas
 
+### 35. Auditoria final do pacote Power BI MVP
+
+- Auditoria técnica e analítica confirmou tabelas observadas populadas e reproduzíveis, ausência de tabelas vazias enganosas, sete testes aprovados e oito controles reconciliados.
+- Foram corrigidos o código nulo das linhas populacionais `Insgesamt`, metadados insuficientes do dicionário, controles antes auto-referenciais e riscos de contexto em cards DAX.
+- A origem RKI foi validada visual e textualmente na Tabela 2, página 6 do PDF oficial.
+- Classificação geral: pacote descritivo `READY WITH LIMITATIONS`; cenários `NOT READY` e `not_calculated`; F6.2 continua `TODO / DEFERRED`.
+- Relatório completo: `00_project/power_bi_mvp_final_audit.md`.
+
 ### 34. Pacote analítico mínimo para Power BI — `READY FOR MANUAL BUILD`
 
 - Os sete RAW locais foram inventariados e tiveram caminho, tamanho e SHA-256 reconciliados com manifesto e checksums; nenhum RAW foi alterado ou adicionado ao Git.

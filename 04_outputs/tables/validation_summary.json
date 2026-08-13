@@ -31,11 +31,11 @@
     },
     "data_dictionary": {
       "rows": 80,
-      "columns": 9
+      "columns": 13
     },
     "control_totals": {
-      "rows": 7,
-      "columns": 7
+      "rows": 8,
+      "columns": 8
     },
     "scenario_framework": {
       "rows": 8,

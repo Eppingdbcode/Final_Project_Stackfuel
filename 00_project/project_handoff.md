@@ -8,8 +8,8 @@
 - **Final presentation:** interactive Microsoft Power BI dashboard. Python/Pandas prepares and validates analytical tables; Power BI must reconcile metrics, filters, units, denominators and results with Python controls and visibly distinguish observed data from assumptions.
 - **Environment:** UV is the sole manager; `.python-version`, `pyproject.toml`, `uv.lock` and the UV-managed `.venv` are the sources of truth. `environment.yml` exists only in the backup.
 - **Operational memory:** `AGENTS.md`, `PROJECT_STATUS.md`, `00_project/TASKS.md`, `00_project/decision_log.md` and this handoff; operational details are in `00_project/WORKFLOW.md`.
-- **Last completed task:** reproducible observed-data pipeline, quality gates and Power BI-ready descriptive package.
-- **Current state:** Phases 3 and 4 and the minimum observed-data EDA are complete with documented limitations on `analysis/powerbi-mvp`. Seven local RAW files remain checksum-validated and ignored. The Power BI package contains validated tables, controls, a proposed semantic model, DAX and build/reconciliation instructions. No `.pbix` has been created. F6.2 is `TODO / DEFERRED`; no economic scenario result exists.
+- **Last completed task:** final technical and analytical audit of the Power BI MVP, including corrective regeneration and validation.
+- **Current state:** the descriptive Power BI package is `READY WITH LIMITATIONS` after final audit. Seven local RAW files remain checksum-validated and ignored. All observed facts are populated; the dictionary now records keys/granularity/denominators; eight expected-versus-actual controls pass; seven automated tests pass. No `.pbix` has been created. F6.2 is `TODO / DEFERRED`; scenario results remain absent and `not_calculated`.
 - **Next task:** build the four-page descriptive dashboard manually in Power BI Desktop from `04_outputs/tables/`, then execute `04_outputs/power_bi/validation_checklist.md`. Do not begin F6.2 or calculate scenario results without a separate evidence-parameter decision.
 
 ### Analytical MVP handoff

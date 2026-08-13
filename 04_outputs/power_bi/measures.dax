@@ -16,8 +16,20 @@ CALCULATE (
     fact_population_observed[age_label] = "Insgesamt"
 )
 
+Population 2025 (Persons) =
+CALCULATE (
+    [Population (Persons)],
+    dim_date[date_key] = "2025"
+)
+
 Obesity Prevalence (%) =
-MAX ( fact_obesity_observed[estimate_pct] )
+SELECTEDVALUE ( fact_obesity_observed[estimate_pct] )
+
+Obesity Prevalence 2023 (%) =
+CALCULATE (
+    SELECTEDVALUE ( fact_obesity_observed[estimate_pct] ),
+    dim_date[date_key] = "2023"
+)
 
 Disease Cost (Million EUR) =
 CALCULATE (
@@ -25,5 +37,15 @@ CALCULATE (
     fact_disease_cost_observed[unit] = "Mill. EUR"
 )
 
+Disease Cost - Diabetes 2023 (Million EUR) =
+CALCULATE (
+    [Disease Cost (Million EUR)],
+    dim_date[date_key] = "2023",
+    fact_disease_cost_observed[diagnosis_code] = "E10-E14"
+)
+
 Scenario Result Status =
-"Not calculated - central clinical and economic parameters unavailable"
+CALCULATE (
+    SELECTEDVALUE ( scenario_framework[status] ),
+    scenario_framework[parameter] = "net_budget_impact"
+)
