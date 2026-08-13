@@ -1,6 +1,6 @@
 # FINAL PROJECT — GLP-1 & PUBLIC HEALTH IN GERMANY
 
-## Current operational handoff — 2026-08-12
+## Current operational handoff — 2026-08-13
 
 - **Official root:** `C:\Users\eppin\Desktop\Final_Project_Stackfuel`; GitHub: `https://github.com/Eppingdbcode/Final_Project_Stackfuel.git`; operational branch: `main`.
 - **Temporary backup:** `C:\Users\eppin\GLP1_Germany_Final_Project` remains intact and must not be edited or removed without an explicit later decision.
@@ -9,8 +9,8 @@
 - **Environment:** UV is the sole manager; `.python-version`, `pyproject.toml`, `uv.lock` and the UV-managed `.venv` are the sources of truth. `environment.yml` exists only in the backup.
 - **Operational memory:** `AGENTS.md`, `PROJECT_STATUS.md`, `00_project/TASKS.md`, `00_project/decision_log.md` and this handoff; operational details are in `00_project/WORKFLOW.md`.
 - **Last completed task:** operational-memory update from the validated historical handoff.
-- **Current state:** F2.2 is `IN PROGRESS` with partial WIdO acquisition. Integrated execution F2.2–F2.8 is authorized without intermediate approval. Phase 3 remains `TODO` and must not start during that block.
-- **Next task:** operationally execute F2.2–F2.8 under D-022, beginning with the authorized systematic WIdO acquisition; this is no longer a pending scope decision.
+- **Current state:** integrated F2.2–F2.8 execution is incomplete. F2.2 remains partial; F2.3 is blocked by retired/redirected legacy download pages; F2.4 is complete with two official RKI/GEDA PDFs; F2.5–F2.6 and final closure of F2.7–F2.8 remain pending. Phase 3 has not started.
+- **Next task:** resume the authorized block by resolving the official WIdO per-ingredient export workflow, locating the current official RKI Diabetes replacement for the approved XLSX, then execute F2.5–F2.8 without starting Phase 3.
 
 ### Authorized WIdO scope
 

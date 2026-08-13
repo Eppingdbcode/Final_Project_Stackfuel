@@ -50,12 +50,12 @@ As análises F1.2 a F1.8 são independentes entre si. Cada uma pode ser concluí
 |---|---|---|---|---|---|---|---|
 | F2.1 | DONE | Aprovar a lista final de datasets | HIGH | XS | F1.10, F0.7 | Lista aprovada em `00_project/data_feasibility_map.md` | SIM — concluída |
 | F2.2 | IN PROGRESS — aquisição parcial; execução operacional autorizada | Adquirir e preservar dados WIdO para 2012–2024 e ATC A10BJ efetivamente disponíveis | HIGH | S | F2.1 | Arquivos originais no caminho canônico em `01_raw_data/wido/pharmaanalyst/` e indisponibilidades documentadas | NÃO — integrada a F2.2–F2.8 |
-| F2.3 | TODO | Adquirir e preservar dados RKI Diabetes | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_diabetes/` | NÃO |
-| F2.4 | TODO | Adquirir e preservar dados RKI Obesity | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_obesity/` | NÃO |
+| F2.3 | BLOCKED — URLs legados redirecionam; XLSX aprovado não localizado | Adquirir e preservar dados RKI Diabetes | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_diabetes/` | NÃO |
+| F2.4 | DONE — duas publicações oficiais preservadas | Adquirir e preservar dados RKI Obesity | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_geda/` | NÃO |
 | F2.5 | TODO | Adquirir e preservar dados Destatis | HIGH | M | F2.1 | Arquivos originais em `01_raw_data/destatis/` | NÃO |
 | F2.6 | TODO | Preservar documentação oficial e estudos selecionados | MEDIUM | M | F2.1 | Arquivos em `05_sources/documentation/` e `05_sources/studies/` | NÃO |
-| F2.7 | TODO | Registrar metadados, nomes originais, licenças e datas de acesso | HIGH | S | F2.2, F2.3, F2.4, F2.5, F2.6 | `01_raw_data/raw_data_manifest.csv` | NÃO |
-| F2.8 | TODO | Calcular checksums e validar a imutabilidade RAW | HIGH | S | F2.7 | `01_raw_data/raw_data_checksums.sha256` e relatório de validação | SIM — encerramento da Fase 2 |
+| F2.7 | IN PROGRESS — inventário atual completo; aquisições pendentes | Registrar metadados, nomes originais, licenças e datas de acesso | HIGH | S | F2.2, F2.3, F2.4, F2.5, F2.6 | `01_raw_data/raw_data_manifest.csv` | NÃO |
+| F2.8 | IN PROGRESS — checksums atuais completos; encerramento pendente | Calcular checksums e validar a imutabilidade RAW | HIGH | S | F2.7 | `01_raw_data/raw_data_checksums.sha256` e relatório de validação | SIM — encerramento da Fase 2 |
 
 ## Fase 3 — Inspeção e qualidade dos dados
 
@@ -166,8 +166,8 @@ Executar integralmente F2.2–F2.8, sem aprovação intermediária, mantendo F2.
 | ID | Status | Tarefa | Prioridade | Esforço | Dependências | Entregável | Aprovação |
 |---|---|---|---|---|---|---|---|
 | F2.2–F2.8 | AUTHORIZED — execução integrada | Adquirir somente combinações WIdO disponíveis; executar aquisições autorizadas restantes; registrar metadados, indisponibilidades e checksums; encerrar Fase 2 | HIGH | L | F2.1 | RAW preservado localmente, manifesto/checksums completos e validação de encerramento | NÃO — sem aprovação intermediária; Fase 3 proibida |
-| F2.3 | TODO | Adquirir e preservar dados RKI Diabetes | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_diabetes/` | NÃO |
-| F2.4 | TODO | Adquirir e preservar dados RKI Obesity | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_obesity/` | NÃO |
+| F2.3 | BLOCKED — URLs legados redirecionam; XLSX aprovado não localizado | Adquirir e preservar dados RKI Diabetes | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_diabetes/` | NÃO |
+| F2.4 | DONE — duas publicações oficiais preservadas | Adquirir e preservar dados RKI Obesity | HIGH | S | F2.1 | Arquivos originais em `01_raw_data/rki_geda/` | NÃO |
 | F2.5 | TODO | Adquirir e preservar dados Destatis | HIGH | M | F2.1 | Arquivos originais em `01_raw_data/destatis/` | NÃO |
 | F2.6 | TODO | Preservar documentação oficial e estudos selecionados | MEDIUM | M | F2.1 | Arquivos em `05_sources/documentation/` e `05_sources/studies/` | NÃO |
 | F6.2 | TODO | Selecionar fontes de eficácia e segurança | HIGH | L | F6.1 | `05_sources/studies/clinical_evidence_register.csv` | NÃO |

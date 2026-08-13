@@ -4,12 +4,20 @@ Este arquivo registra o progresso do projeto e deve ser atualizado sempre que um
 
 ## Última atualização
 
-- Data: 2026-08-12
+- Data: 2026-08-13
 - Deadline final: 2026-08-26.
 - Entrega de apresentação: dashboard interativo em Microsoft Power BI, alimentado por tabelas processadas e validadas em Python/Pandas.
-- Status geral: raiz oficial consolidada em `C:\Users\eppin\Desktop\Final_Project_Stackfuel`; UV é o único ambiente ativo. F2.2 permanece `IN PROGRESS` com aquisição WIdO parcial. A execução integrada F2.2–F2.8 está autorizada sem aprovação intermediária; a Fase 3 permanece `TODO` e não pode ser iniciada durante esse bloco.
+- Status geral: execução integrada F2.2–F2.8 iniciada. F2.2 permanece parcial após confirmação oficial dos ingredientes A10BJ de 2024; F2.3 está bloqueada porque os URLs aprovados redirecionam e os XLSX legados não foram localizados; F2.4 foi concluída com duas publicações oficiais RKI/GEDA preservadas. F2.5–F2.6 e o encerramento de F2.7–F2.8 permanecem pendentes. A Fase 3 não foi iniciada.
 
 ## Tarefas concluídas
+
+### 32. Execução parcial do bloco F2.2–F2.8
+
+- O PharMaAnalyst confirmou em 2024 `Exenatid (A10BJ01)`, `Liraglutid (A10BJ02)`, `Dulaglutid (A10BJ05)` e `Semaglutid (A10BJ06)`; tirzepatida não apareceu em A10BJ.
+- A exportação sistemática individual WIdO não foi concluída porque a sessão do portal reinicia após cada download e a seleção automatizada individual mostrou-se instável. Nenhum RAW existente foi sobrescrito.
+- Os URLs aprovados do RKI Diabetes redirecionam para a nova área GBE; os XLSX legados não foram localizados e nenhuma substituição não aprovada foi feita.
+- Duas publicações oficiais RKI/GEDA foram preservadas em `01_raw_data/rki_geda/`, validadas por assinatura PDF, tamanho e SHA-256, e registradas no manifesto e nos checksums.
+- Fase 3, F6.2, Power BI, processamento e análise não foram iniciados.
 
 ### 31. Atualização da memória operacional com o handoff histórico validado
 
