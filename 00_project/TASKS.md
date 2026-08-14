@@ -1,5 +1,15 @@
 # Backlog oficial do projeto
 
+## Recovery gate — GENESIS hero dataset
+
+| ID | Status | Tarefa | Prioridade | Entregável |
+|---|---|---|---|---|
+| R1 | DONE | Validar e adquirir GENESIS 12411-0013 | HIGH | 22.080 registros oficiais, 2021–2025 |
+| R2 | DONE | Implementar Parquet, Pandas, DuckDB/SQL, analytical, lineage e notebook | HIGH | Pipeline e outputs reconciliados |
+| R3 | TODO | Montar e reconciliar a página demográfica no Power BI Desktop | HIGH | `.pbix` validado manualmente |
+
+A próxima tarefa única é R3; nenhum cenário econômico está autorizado.
+
 Este arquivo contém o backlog oficial e incremental do projeto de Data Analytics sobre tratamentos GLP-1/GIP, obesidade, diabetes tipo 2 e impacto econômico no sistema GKV da Alemanha.
 
 ## Legenda

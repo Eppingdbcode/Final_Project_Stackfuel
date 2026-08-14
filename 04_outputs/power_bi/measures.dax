@@ -49,3 +49,19 @@ CALCULATE (
     SELECTEDVALUE ( scenario_framework[status] ),
     scenario_framework[parameter] = "net_budget_impact"
 )
+
+Hero Population (Persons) =
+SUM ( fact_population_state_age_sex[population_persons] )
+
+Hero State Share (%) =
+DIVIDE (
+    [Hero Population (Persons)],
+    CALCULATE ( [Hero Population (Persons)], REMOVEFILTERS ( dim_geography ) )
+) * 100
+
+Hero State Rank =
+RANKX (
+    ALLSELECTED ( dim_geography[state_name] ),
+    [Hero Population (Persons)],
+    , DESC, Dense
+)

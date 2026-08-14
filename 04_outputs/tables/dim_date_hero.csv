@@ -1,0 +1,6 @@
+﻿reference_date,year,census_basis,series_break_before
+2021-12-31,2021,Census 2011 basis,False
+2022-12-31,2022,Census 2022 basis,True
+2023-12-31,2023,Census 2022 basis,False
+2024-12-31,2024,Census 2022 basis,False
+2025-12-31,2025,Census 2022 basis,False

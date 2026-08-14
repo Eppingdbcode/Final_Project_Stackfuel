@@ -5,10 +5,12 @@ description = "Reproducible analysis of GLP-1 reimbursement scenarios and public
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "duckdb>=1.3.2",
     "ipykernel>=7.3.0",
     "matplotlib>=3.11.1",
     "openpyxl>=3.1.5",
     "pandas>=3.0.5",
+    "pyarrow>=21.0.0",
     "seaborn>=0.13.2",
 ]
 
@@ -21,5 +23,7 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "nbclient>=0.10.2",
+    "nbformat>=5.10.4",
     "pytest>=9.1.1",
 ]

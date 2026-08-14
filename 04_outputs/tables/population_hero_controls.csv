@@ -1,0 +1,5 @@
+﻿check_name,actual,expected,status
+duplicate_key_count,0.0,0.0,pass
+negative_population_count,0.0,0.0,pass
+processed_row_count,22080.0,22080.0,pass
+state_count,16.0,16.0,pass

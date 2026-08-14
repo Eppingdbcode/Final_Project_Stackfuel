@@ -1,0 +1,5 @@
+﻿table,metric,pandas_rows,sql_rows,max_absolute_difference,status
+population_state_summary,population_persons,80,80,0.0,pass
+population_state_summary,national_share_pct,80,80,1.7763568394002505e-15,pass
+population_state_summary,population_rank,80,80,0.0,pass
+population_age_sex_summary,population_persons,1280,1280,0.0,pass

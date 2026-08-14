@@ -1,5 +1,9 @@
 # Final Project — GLP-1 & Public Health in Germany
 
+## GENESIS technical recovery
+
+The recovery branch adds official table `12411-0013` as a 22,080-row hero dataset for 2021–2025. It demonstrates Parquet processing, substantive Pandas transformations, executable DuckDB SQL, justified dimension joins, grouped summaries, window rankings, machine-readable lineage, notebook analysis and Pandas–SQL reconciliation. Results through 2021 and from 2022 use different census bases and must not be shown as one continuous trend. Resident population is not GKV coverage or clinical eligibility.
+
 ## Objetivo
 
 Projeto acadêmico de Data Analytics que investiga, sem conclusão predeterminada, se, quando e para quais grupos de risco a ampliação do reembolso de tratamentos GLP-1/GIP para obesidade poderia reduzir a carga clínica e econômica do diabetes tipo 2 no seguro-saúde estatutário alemão (GKV).

@@ -26,7 +26,7 @@
       "columns": 14
     },
     "raw_inventory": {
-      "rows": 7,
+      "rows": 8,
       "columns": 17
     },
     "data_dictionary": {
@@ -42,7 +42,7 @@
       "columns": 8
     }
   },
-  "phase_2_raw_files": 7,
+  "phase_2_raw_files": 8,
   "wido_independent_observations": 4,
   "scenario_results_status": "not_calculated"
 }

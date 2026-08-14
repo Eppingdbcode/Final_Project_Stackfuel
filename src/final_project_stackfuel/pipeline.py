@@ -206,6 +206,7 @@ def build_inventory() -> pd.DataFrame:
                     "rki_geda_agg": "official survey estimate",
                     "destatis_disease_costs": "official disease-cost estimate",
                     "destatis_population": "official population estimate",
+                    "destatis_population_hero": "official population estimate",
                 }
             ),
             "period": manifest["reference_period_start"] + " to " + manifest["reference_period_end"],
@@ -218,6 +219,7 @@ def build_inventory() -> pd.DataFrame:
                     "rki_geda_agg": "published prevalence estimates; period; population; uncertainty",
                     "destatis_disease_costs": "year; ICD-10 group; cost metric; value; unit",
                     "destatis_population": "reference date; age; population count",
+                    "destatis_population_hero": "reference date; federal state; sex; single year of age; population count",
                 }
             ),
             "units": manifest["dataset_id"].map(
@@ -226,6 +228,7 @@ def build_inventory() -> pd.DataFrame:
                     "rki_geda_agg": "percent and 95% confidence interval",
                     "destatis_disease_costs": "million EUR; EUR per resident",
                     "destatis_population": "persons",
+                    "destatis_population_hero": "persons",
                 }
             ),
             "granularity": manifest["dataset_id"].map(
@@ -234,6 +237,7 @@ def build_inventory() -> pd.DataFrame:
                     "rki_geda_agg": "Germany x survey period x published stratum",
                     "destatis_disease_costs": "Germany x year x ICD-10 group x metric",
                     "destatis_population": "Germany x reference date x single year of age",
+                    "destatis_population_hero": "federal state x reference date x sex x single year of age",
                 }
             ),
             "is_duplicate_content": duplicate_hashes,
@@ -245,6 +249,7 @@ def build_inventory() -> pd.DataFrame:
                     "rki_geda_agg": "epidemiological context and explicitly labelled survey inputs",
                     "destatis_disease_costs": "all-payer national disease-cost context",
                     "destatis_population": "resident-population denominator with explicit scope",
+                    "destatis_population_hero": "granular resident-population analysis with explicit census basis",
                 }
             ),
             "prohibited_use": manifest["dataset_id"].map(
@@ -253,6 +258,7 @@ def build_inventory() -> pd.DataFrame:
                     "rki_geda_agg": "clinical eligibility; measured BMI; invented microdata",
                     "destatis_disease_costs": "GKV or avoidable cost without explicit assumptions",
                     "destatis_population": "GKV-insured or clinically eligible population without assumptions",
+                    "destatis_population_hero": "GKV-insured or clinically eligible population; continuous 2021-2025 trend",
                 }
             ),
         }
@@ -386,7 +392,7 @@ def write_tables() -> dict[str, pd.DataFrame]:
     validation = {
         "status": "pass",
         "tables": {name: {"rows": len(frame), "columns": len(frame.columns)} for name, frame in tables.items()},
-        "phase_2_raw_files": 7,
+        "phase_2_raw_files": 8,
         "wido_independent_observations": 4,
         "scenario_results_status": "not_calculated",
     }

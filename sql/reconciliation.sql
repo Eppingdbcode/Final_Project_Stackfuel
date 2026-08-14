@@ -1,0 +1,2 @@
+-- Executable reconciliation is implemented in hero_pipeline.reconcile after
+-- both Pandas and SQL tables exist; natural keys are validated one-to-one.

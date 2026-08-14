@@ -1,5 +1,12 @@
 # FINAL PROJECT — GLP-1 & PUBLIC HEALTH IN GERMANY
 
+## Recovery handoff — 2026-08-14
+
+- Branch: `recovery/genesis-hero-dataset`; `main` remains at `e52ba2fa11c3d1c82ec563c813ed096643b2899a`.
+- Hero: GENESIS `12411-0013`, 22.080 official records for 2021–2025 by Land, sex and age.
+- Run both Python modules, then pytest; processed data is in `02_processed_data/hero/`, SQL in `sql/`, and analytical outputs in `04_outputs/tables/`.
+- Next task: manually build and reconcile the demographic page in Power BI Desktop. Do not calculate eligibility, treatable patients or savings.
+
 ## Current operational handoff — 2026-08-13
 
 - **Official root:** `C:\Users\eppin\Desktop\Final_Project_Stackfuel`; GitHub: `https://github.com/Eppingdbcode/Final_Project_Stackfuel.git`; operational branch: `analysis/powerbi-mvp` (not merged into `main`).

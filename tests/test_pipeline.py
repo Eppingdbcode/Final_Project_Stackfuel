@@ -17,9 +17,9 @@ from final_project_stackfuel.pipeline import (
 )
 
 
-def test_manifest_and_checksums_cover_exactly_seven_raw_files() -> None:
+def test_manifest_and_checksums_cover_exactly_eight_raw_files() -> None:
     manifest = pd.read_csv(RAW / "raw_data_manifest.csv", dtype=str)
-    assert len(manifest) == 7
+    assert len(manifest) == 8
     assert manifest["manifest_record_id"].is_unique
     for row in manifest.itertuples():
         path = RAW.parent / row.relative_raw_path

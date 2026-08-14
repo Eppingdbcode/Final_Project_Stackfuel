@@ -1,0 +1,56 @@
+{
+  "source_table": "12411-0013",
+  "raw_rows": 22080,
+  "raw_columns": 22,
+  "processed_rows": 22080,
+  "processed_columns": 22,
+  "analytical_fact_rows": 14560,
+  "power_bi_rows": 15920,
+  "memory_bytes": 7027092,
+  "full_row_duplicates": 0,
+  "critical_missing": {
+    "reference_date": 0,
+    "state_code": 0,
+    "sex_code": 0,
+    "age_code_official": 0,
+    "population_persons": 0
+  },
+  "structural_missing": {
+    "age_years_total_rows": 240
+  },
+  "cardinality": {
+    "reference_date": 5,
+    "state_code": 16,
+    "state_name": 16,
+    "sex_code_official": 3,
+    "sex_label_official": 3,
+    "age_code_official": 92,
+    "age_label_official": 92,
+    "population_persons": 18690,
+    "unit": 1,
+    "quality_flag": 1,
+    "year": 5,
+    "sex_code": 3,
+    "sex_label": 3,
+    "age_years": 92,
+    "is_age_total": 2,
+    "is_sex_total": 2,
+    "age_group": 9,
+    "census_basis": 2,
+    "series_break_before": 2,
+    "source_id": 1,
+    "input_class": 1,
+    "denominator": 1
+  },
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "states": 16,
+  "sex_categories": 3,
+  "age_categories": 92,
+  "invalid_population_rows": 0
+}

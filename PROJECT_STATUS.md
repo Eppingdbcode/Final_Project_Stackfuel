@@ -1,5 +1,15 @@
 # Status do projeto
 
+## 37. Technical recovery — GENESIS 12411-0013
+
+- Gate `GO`: 22.080 registros oficiais de 2021–2025 por Bundesland, sexo e idade, sob `dl-de/by-2-0`.
+- RAW preservado localmente e ignorado; manifesto/checksums cobrem oito arquivos.
+- Processed Parquet mantém 22.080 registros; fato aditivo tem 14.560 e exclui somente totais hierárquicos.
+- DuckDB/SQL executa joins dimensionais, controles, agregações, CTE e ranking por janela; Pandas e SQL reconciliam em `1e-9`.
+- Notebook executa integralmente. O pacote Power BI foi ampliado, mas nenhum `.pbix` foi criado ou validado.
+- A quebra Census 2011/Census 2022 permanece explícita; população residente não equivale a GKV ou elegibilidade.
+- Próxima tarefa única: montar e reconciliar manualmente a página demográfica no Power BI Desktop.
+
 Este arquivo registra o progresso do projeto e deve ser atualizado sempre que uma tarefa importante for concluída.
 
 ## Última atualização

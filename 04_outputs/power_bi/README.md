@@ -1,5 +1,11 @@
 # Power BI MVP build guide
 
+## Hero population extension
+
+Import the hero fact, four hero dimensions, two summaries, controls and reconciliation CSVs. Create the relationships appended to `model_relationships.csv` and add the hero measures from `measures.dax`.
+
+Add a **Population composition** page with Bundesland ranking, age-group × sex matrix, state/year slicers and tooltips for persons, national share, census basis and observation class. Display permanently: **2021 uses Census 2011 basis; 2022 onward uses Census 2022 basis. Do not interpret the boundary as a continuous trend. Resident population is not GKV coverage or clinical eligibility.**
+
 ## Import
 
 1. Open Power BI Desktop and choose **Get data > Text/CSV**.

@@ -28,6 +28,8 @@ Thumbs.db
 *.tmp
 *.temp
 *.log
+*.duckdb
+*.duckdb.wal
 
 # Restricted project materials
 01_raw_data/**

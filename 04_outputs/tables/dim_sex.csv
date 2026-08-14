@@ -1,0 +1,4 @@
+﻿sex_code,sex_label,is_sex_total
+F,Female,False
+M,Male,False
+T,Total,True
