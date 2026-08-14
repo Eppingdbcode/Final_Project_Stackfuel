@@ -479,3 +479,12 @@ A decisão aprovada não inicia a Fase 2 e não autoriza download, ingestão, tr
 - **Justificativa:** elegibilidade operacional, participação GKV alinhada, uptake, custo anual por paciente, persistência de longo prazo, frações atribuível/evitável/GKV e realização do benefício permanecem ausentes. Eficácia de ensaio não equivale a efetividade ou economia.
 - **Restrição:** não criar `scenario_parameters`, `scenario_results`, avoided costs, net budget impact ou break-even; F6.3–F8 permanecem não iniciadas.
 - **População:** registrar quebra entre 2021 (base Zensus 2011) e 2022 em diante (base Zensus 2022); não apresentar 2021–2025 como tendência contínua.
+
+## D-026 — GENESIS 12411-0013 como hero dataset técnico
+
+- **Data:** 2026-08-14.
+- **Decisão:** adotar o recorte oficial 2021–2025 da tabela `12411-0013` após gate `GO`.
+- **Justificativa:** 22.080 registros reais, quatro dimensões analíticas, Flat CSV reproduzível, licença `dl-de/by-2-0`, compatibilidade com o prazo e reconciliação com totais oficiais.
+- **Implementação:** RAW imutável; processed Parquet; Pandas e DuckDB/SQL; fato sem totais hierárquicos; dimensões de data, geografia, sexo e idade; notebook e outputs Power BI.
+- **Limite:** 2021 usa Census 2011; 2022 em diante usa Census 2022. População residente não representa GKV, elegibilidade ou pacientes tratáveis.
+- **Escopo:** nenhum cenário econômico, rateio regional de indicadores nacionais ou expansão artificial.
